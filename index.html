@@ -1,1 +1,28 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="color-scheme" content="dark light"><meta name="renderer" content="webkit|chrome"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="x5-orientation" content="portrait"><meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge,chrome=1"><link rel="icon" href="https://actimg.heytapimg.com/favicon.ico"><title>Games Middle Index</title><script>!function(e){function r(e){return null==e?"":String(e)}function n(){return!(!e.HyperJsbridge||!e.HyperJsbridge.trackEvent)}e.GamesLobbyTrack={ready:n,track:function(t,o,a){var c={eventGroup:r(t),eventId:r(o),params:a||{}};if(c.eventGroup&&c.eventId)if(n()){var i=function(e){try{return JSON.stringify(e)}catch(e){return""}}(c);i&&(console.log("GamesLobbyTrack: 上报埋点",c),e.HyperJsbridge.trackEvent(i))}else console.warn("GamesLobbyTrack: HyperJsbridge 未就绪，跳过上报");else console.warn("GamesLobbyTrack: eventGroup 或 eventId 为空，跳过上报")}}}(window)</script><script>!function(e){function o(o){console.log("更新页面主题为:",o?"亮色模式":"暗色模式");var n=new CustomEvent("appThemeChange",{detail:{isLightTheme:o}});e.dispatchEvent(n)}e.addEventListener("themeChanged",(function(e){try{if(!e||!e.detail||"boolean"!=typeof e.detail.isLightTheme)return console.warn("主题变化事件数据无效，使用默认亮色模式"),void o(!0);var n=e.detail.isLightTheme;console.log("主题已变化为:",n?"亮色模式":"暗色模式"),o(n)}catch(e){console.error("处理主题变化事件失败，使用默认亮色模式:",e.message),o(!0)}})),e.GamesTheme={getCurrentTheme:function(){if(!e.HyperJsbridge||!e.HyperJsbridge.isLightThemeMode)return console.warn("主题模式接口不可用，使用默认亮色模式"),!0;try{var o=e.HyperJsbridge.isLightThemeMode();return"boolean"!=typeof o?(console.warn("主题模式接口返回值无效，使用默认亮色模式"),!0):(console.log("当前主题模式:",o?"亮色":"暗色"),o)}catch(e){return console.error("获取主题模式失败，使用默认亮色模式:",e.message),!0}},updatePageTheme:o}}(window)</script><script>function configResponsiveLayout(){var e=document.documentElement;function n(){var n=e.clientWidth/10;e.style.fontSize=n+"px"}n(),window.addEventListener("resize",n)}configResponsiveLayout()</script><script type="module" crossorigin src="./assets/index-1764279039.js"></script><link rel="modulepreload" crossorigin href="./assets/vendor-1764279039.js"><link rel="stylesheet" crossorigin href="./assets/style-1764279039.css"><script type="module">import.meta.url,import("_").catch((()=>1)),async function*(){}().next(),"file:"!=location.protocol&&(window.__vite_is_modern_browser=!0)</script><script type="module">!function(){if(!window.__vite_is_modern_browser){console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),t=document.createElement("script");t.src=e.src,t.onload=function(){System.import(document.getElementById("vite-legacy-entry").getAttribute("data-src"))},document.body.appendChild(t)}}()</script></head><body><div id="app"></div><script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}()</script><script nomodule crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-1764279039.js"></script><script nomodule crossorigin id="vite-legacy-entry" data-src="./assets/index-legacy-1764279039.js">System.import(document.getElementById("vite-legacy-entry").getAttribute("data-src"))</script></body></html>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+        <meta name="color-scheme" content="dark light">
+        <meta name="renderer" content="webkit|chrome">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="x5-orientation" content="portrait">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge,chrome=1">
+        <link rel="icon" href="https://actimg.heytapimg.com/favicon.ico">
+        <title>Games Catalog</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="site-root">
+            <header class="site-header">
+                <div class="site-title">Games Catalog</div>
+                <div class="site-subtitle">mirraaps.space</div>
+            </header>
+            <main class="site-main">
+                <div id="games-list" class="games-grid"></div>
+            </main>
+        </div>
+        <script src="./catalog.js"></script>
+    </body>
+</html>
