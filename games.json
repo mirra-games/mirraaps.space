@@ -1004,7 +1004,9 @@
     "id": "soccer-dash2",
     "title": "Soccer Dash",
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
+    "defaultParams": {
+      "source": "oppo"
+    },
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png"
   }
 ]
