@@ -10,18 +10,86 @@
         <meta name="x5-orientation" content="portrait">
         <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge,chrome=1">
         <link rel="icon" href="https://actimg.heytapimg.com/favicon.ico">
-        <title>Games Catalog</title>
+        <title>Mirra Apps Games</title>
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <div class="site-root">
-            <header class="site-header">
-                <div class="site-title">Catalog</div>
-                <div class="site-subtitle">mirraaps.space</div>
+        <div id="app-root" class="app app--theme-dark">
+            <header class="app-header">
+                <div class="app-header-left">
+                    <img src="./assets/ui/logo.svg" alt="Mirra Apps icon" class="app-logo-icon">
+                    <img src="./assets/ui/MirraApps.svg" alt="Mirra Apps" class="app-logo-wordmark">
+                </div>
+                <div class="app-header-center">
+                    <div class="search-bar" id="search-bar">
+                        <input
+                            id="search-input"
+                            class="search-input"
+                            type="text"
+                            placeholder="Search..."
+                            autocomplete="off"
+                        >
+                        <button class="search-icon-button" type="button" id="search-button"></button>
+                    </div>
+                </div>
+                <div class="app-header-right">
+                    <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle theme"></button>
+                </div>
             </header>
-            <main class="site-main">
-                <div id="games-list" class="games-grid"></div>
+
+            <main class="app-main" id="app-main">
+                <section class="section section-continue" id="section-continue">
+                    <h2 class="section-title">Continue Playing</h2>
+                    <div class="game-row game-row--continue" id="continue-row"></div>
+                </section>
+
+                <section class="section section-featured" id="section-featured">
+                    <h2 class="section-title">Featured Games</h2>
+                    <div class="featured-row" id="featured-row"></div>
+                </section>
+
+                <section class="section" id="section-new">
+                    <h2 class="section-title">New Games</h2>
+                    <div class="game-row game-row--category" data-category="new"></div>
+                </section>
+
+                <section class="section" id="section-casual">
+                    <h2 class="section-title">Casual</h2>
+                    <div class="game-row game-row--category" data-category="casual"></div>
+                </section>
+
+                <section class="section" id="section-arcade">
+                    <h2 class="section-title">Arcade</h2>
+                    <div class="game-row game-row--category" data-category="arcade"></div>
+                </section>
+
+                <section class="section" id="section-fps">
+                    <h2 class="section-title">FPS</h2>
+                    <div class="game-row game-row--category" data-category="fps"></div>
+                </section>
             </main>
+
+            <section class="search-overlay" id="search-overlay">
+                <div class="search-overlay-header">
+                    <button class="back-button" type="button" id="search-back"></button>
+                    <div class="search-overlay-input-wrapper">
+                        <input
+                            id="search-input-overlay"
+                            class="search-input search-input--overlay"
+                            type="text"
+                            placeholder="Search game"
+                            autocomplete="off"
+                        >
+                    </div>
+                </div>
+                <div class="search-results" id="search-results"></div>
+            </section>
+
+            <footer class="app-footer">
+                <a href="#" class="footer-link">About</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Privacy Policy</a>
+            </footer>
         </div>
         <script src="./catalog.js"></script>
     </body>
