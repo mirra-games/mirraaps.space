@@ -124,6 +124,75 @@ function renderSections(games) {
   });
 }
 
+function setupRowScrollControls() {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach((section) => {
+    const row = section.querySelector('.game-row, .featured-row');
+    if (!row) return;
+
+    const leftBtn = document.createElement('button');
+    leftBtn.type = 'button';
+    leftBtn.className = 'scroll-arrow scroll-arrow--left scroll-arrow--hidden';
+
+    const rightBtn = document.createElement('button');
+    rightBtn.type = 'button';
+    rightBtn.className = 'scroll-arrow scroll-arrow--right scroll-arrow--hidden';
+
+    const fadeLeft = document.createElement('div');
+    fadeLeft.className = 'scroll-fade scroll-fade--left scroll-fade--hidden';
+
+    const fadeRight = document.createElement('div');
+    fadeRight.className = 'scroll-fade scroll-fade--right scroll-fade--hidden';
+
+    section.appendChild(leftBtn);
+    section.appendChild(rightBtn);
+    section.appendChild(fadeLeft);
+    section.appendChild(fadeRight);
+
+    function updateState() {
+      const maxScroll = row.scrollWidth - row.clientWidth;
+      if (maxScroll <= 0) {
+        leftBtn.classList.add('scroll-arrow--hidden');
+        rightBtn.classList.add('scroll-arrow--hidden');
+        fadeLeft.classList.add('scroll-fade--hidden');
+        fadeRight.classList.add('scroll-fade--hidden');
+        return;
+      }
+
+      const atStart = row.scrollLeft <= 1;
+      const atEnd = row.scrollLeft >= maxScroll - 1;
+
+      if (atStart) {
+        leftBtn.classList.add('scroll-arrow--hidden');
+        fadeLeft.classList.add('scroll-fade--hidden');
+      } else {
+        leftBtn.classList.remove('scroll-arrow--hidden');
+        fadeLeft.classList.remove('scroll-fade--hidden');
+      }
+
+      if (atEnd) {
+        rightBtn.classList.add('scroll-arrow--hidden');
+        fadeRight.classList.add('scroll-fade--hidden');
+      } else {
+        rightBtn.classList.remove('scroll-arrow--hidden');
+        fadeRight.classList.remove('scroll-fade--hidden');
+      }
+    }
+
+    leftBtn.addEventListener('click', () => {
+      row.scrollBy({ left: -row.clientWidth * 0.8, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      row.scrollBy({ left: row.clientWidth * 0.8, behavior: 'smooth' });
+    });
+
+    row.addEventListener('scroll', updateState);
+    window.addEventListener('resize', updateState);
+    updateState();
+  });
+}
+
 function setupSearch(games) {
   const searchInput = document.getElementById('search-input');
   const searchButton = document.getElementById('search-button');
@@ -131,8 +200,9 @@ function setupSearch(games) {
   const overlayInput = document.getElementById('search-input-overlay');
   const backButton = document.getElementById('search-back');
   const resultsContainer = document.getElementById('search-results');
+  const searchBar = document.getElementById('search-bar');
 
-  if (!searchInput || !searchButton || !overlay || !overlayInput || !backButton || !resultsContainer) return;
+  if (!searchInput || !searchButton || !overlay || !overlayInput || !backButton || !resultsContainer || !searchBar) return;
 
   function performSearch(query) {
     const q = query.trim().toLowerCase();
@@ -170,11 +240,24 @@ function setupSearch(games) {
     });
   }
 
+  function isMobile() {
+    return window.matchMedia('(max-width: 767px)').matches;
+  }
+
   function openOverlay() {
     overlay.classList.add('search-overlay--visible');
-    overlayInput.value = searchInput.value;
-    overlayInput.focus();
-    performSearch(overlayInput.value);
+    if (isMobile()) {
+      overlayInput.value = searchInput.value;
+      overlayInput.focus();
+      performSearch(overlayInput.value || '');
+    } else {
+      const rect = searchBar.getBoundingClientRect();
+      overlay.style.left = `${rect.left}px`;
+      overlay.style.width = `${rect.width}px`;
+      overlay.style.right = 'auto';
+      overlay.style.top = `${rect.bottom + 6 + window.scrollY}px`;
+      performSearch(searchInput.value || '');
+    }
   }
 
   function closeOverlay() {
@@ -182,29 +265,53 @@ function setupSearch(games) {
   }
 
   searchButton.addEventListener('click', () => {
-    if (window.matchMedia('(max-width: 767px)').matches) {
+    if (!isMobile() && overlay.classList.contains('search-overlay--visible')) {
+      closeOverlay();
+    } else {
+      openOverlay();
+    }
+  });
+
+  searchInput.addEventListener('input', () => {
+    if (isMobile()) return;
+    const value = searchInput.value || '';
+
+    if (!overlay.classList.contains('search-overlay--visible')) {
+      if (value.trim() === '') return;
       openOverlay();
     } else {
-      performSearch(searchInput.value || '');
+      performSearch(value);
     }
   });
 
   searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      if (window.matchMedia('(max-width: 767px)').matches) {
-        openOverlay();
-      } else {
-        performSearch(searchInput.value || '');
-      }
+      openOverlay();
     }
   });
 
   overlayInput.addEventListener('input', (e) => {
-    performSearch(e.target.value || '');
+    if (isMobile()) {
+      performSearch(e.target.value || '');
+    }
   });
 
   backButton.addEventListener('click', () => {
     closeOverlay();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeOverlay();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (isMobile()) return;
+    if (!overlay.classList.contains('search-overlay--visible')) return;
+    if (!overlay.contains(e.target) && e.target !== searchInput && e.target !== searchButton) {
+      closeOverlay();
+    }
   });
 }
 
@@ -227,6 +334,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   renderSections(games);
+  setupRowScrollControls();
   setupSearch(games);
   setupThemeToggle();
 });
