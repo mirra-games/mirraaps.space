@@ -1,15 +1,35 @@
 const STORAGE_KEY_CONTINUE = 'mirraapps_continue_games_v1';
 
+let CATEGORY_CONFIG = [];
+
 async function loadGames() {
   const response = await fetch('./games.json');
+
   if (!response.ok) {
     console.error('Failed to load games.json', response.status);
     return [];
   }
+
   try {
     return await response.json();
   } catch (e) {
     console.error('Invalid JSON in games.json', e);
+    return [];
+  }
+}
+
+async function loadCategoryConfig() {
+  try {
+    const response = await fetch('./categories.json');
+    if (!response.ok) {
+      console.error('Failed to load categories.json', response.status);
+      return [];
+    }
+    const data = await response.json();
+    if (!Array.isArray(data)) return [];
+    return data;
+  } catch (e) {
+    console.error('Invalid categories.json', e);
     return [];
   }
 }
@@ -96,12 +116,13 @@ function renderSections(games) {
 
   const featuredRow = document.getElementById('featured-row');
   const continueRow = document.getElementById('continue-row');
-  const categoryRows = document.querySelectorAll('.game-row--category');
+  const dynamicContainer = document.getElementById('dynamic-sections');
 
-  if (!featuredRow || !continueRow) return;
+  if (!featuredRow || !continueRow || !dynamicContainer) return;
 
   featuredRow.innerHTML = '';
   continueRow.innerHTML = '';
+  dynamicContainer.innerHTML = '';
 
   (groups.featured || games).forEach((game) => {
     const card = createGameCard(game, 'featured');
@@ -114,13 +135,29 @@ function renderSections(games) {
     continueRow.appendChild(card);
   });
 
-  categoryRows.forEach((row) => {
-    const cat = row.getAttribute('data-category');
-    row.innerHTML = '';
-    (groups[cat] || []).forEach((game) => {
+  CATEGORY_CONFIG.forEach(({ id, title }) => {
+    const list = groups[id];
+    if (!Array.isArray(list) || list.length === 0) return;
+
+    const section = document.createElement('section');
+    section.className = 'section';
+
+    const heading = document.createElement('h2');
+    heading.className = 'section-title';
+    heading.textContent = title;
+
+    const row = document.createElement('div');
+    row.className = 'game-row game-row--category';
+    row.setAttribute('data-category', id);
+
+    list.forEach((game) => {
       const card = createGameCard(game, 'category');
       row.appendChild(card);
     });
+
+    section.appendChild(heading);
+    section.appendChild(row);
+    dynamicContainer.appendChild(section);
   });
 }
 
@@ -328,9 +365,17 @@ function setupThemeToggle() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const games = await loadGames();
+  const [games, categories] = await Promise.all([
+    loadGames(),
+    loadCategoryConfig()
+  ]);
+
   if (!Array.isArray(games) || games.length === 0) {
     return;
+  }
+
+  if (Array.isArray(categories)) {
+    CATEGORY_CONFIG = categories;
   }
 
   renderSections(games);

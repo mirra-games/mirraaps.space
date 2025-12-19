@@ -1,0 +1,7 @@
+[
+  { "id": "new", "title": "New Games" },
+  { "id": "casual", "title": "Casual" },
+  { "id": "arcade", "title": "Arcade" },
+  { "id": "fps", "title": "FPS" },
+  { "id": "puzzle", "title": "Puzzle" }
+]
