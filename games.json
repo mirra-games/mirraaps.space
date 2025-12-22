@@ -1,10 +1,10 @@
 [
   {
-    "id": "soccer-featured-1",
-    "title": "Soccer Dash",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+    "id": "epic-featured-1",
+    "title": "Epic Empire",
+    "url": "https://hosting.mirracloud.com/hosting/games/694987ae8407fddba4bf1d0f/",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-background.png",
+    "icon": "https://mirraaps.space/epic-empire/cover.png",
     "category": "featured"
   },
   {
@@ -124,7 +124,7 @@
     "title": "Soccer Dash",
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/soccer-dash/game-background.png",
     "category": "featured"
   },
   {
