@@ -160,11 +160,11 @@
     "category": "fps"
   },
   {
-    "id": "soccer-featured-5",
+    "id": "epic racing-featured-5",
     "title": "Soccer Dash",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+    "url": "https://hosting.mirracloud.com/hosting/games/694989709b55a29212796116/",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/epic-racing/cover.png",
     "category": "featured"
   },
   {
@@ -199,14 +199,14 @@
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "fps"
   },
-  {
-    "id": "soccer-featured-6",
-    "title": "Soccer Dash",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "featured"
-  },
+  // {
+  //   "id": "soccer-featured-6",
+  //   "title": "Soccer Dash",
+  //   "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+  //   "defaultParams": {},
+  //   "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+  //   "category": "featured"
+  // },
   {
     "id": "soccer-new-6",
     "title": "Soccer Dash New",
@@ -239,14 +239,14 @@
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "fps"
   },
-  {
-    "id": "soccer-featured-7",
-    "title": "Soccer Dash",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "featured"
-  },
+  // {
+  //   "id": "soccer-featured-7",
+  //   "title": "Soccer Dash",
+  //   "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+  //   "defaultParams": {},
+  //   "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+  //   "category": "featured"
+  // },
   {
     "id": "soccer-new-7",
     "title": "Soccer Dash New",
