@@ -232,14 +232,6 @@
     "category": "fps"
   },
   {
-    "id": "soccer-new-7",
-    "title": "Soccer Dash New",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "new"
-  },
-  {
     "id": "soccer-casual-7",
     "title": "Soccer Dash Casual",
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
