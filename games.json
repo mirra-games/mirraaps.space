@@ -88,11 +88,11 @@
     "category": "featured"
   },
   {
-    "id": "soccer-new-3",
-    "title": "Soccer Dash New",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+    "id": "find-sort-match-new-3",
+    "title": "Find Sort Match New",
+    "url": "https://hosting.mirracloud.com/hosting/games/694991489b55a2921279611a/",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/find-sort-match/icon.png",
     "category": "new"
   },
   {
@@ -161,7 +161,7 @@
   },
   {
     "id": "epic racing-featured-5",
-    "title": "Soccer Dash",
+    "title": "Epic Racing",
     "url": "https://hosting.mirracloud.com/hosting/games/694989709b55a29212796116/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/epic-racing/cover.png",
