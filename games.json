@@ -152,11 +152,11 @@
     "category": "casual"
   },
   {
-    "id": "soccer-arcade-5",
-    "title": "Soccer Dash Arcade",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+    "id": "bed-wars-arcade-5",
+    "title": "Bed Wars Arcade",
+    "url": "https://hosting.mirracloud.com/hosting/games/6949b7529b55a29212796126/",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/bed-wars/icon.png",
     "category": "arcade"
   },
   {
@@ -174,21 +174,5 @@
     "defaultParams": {},
     "icon": "https://mirraaps.space/sticker-asmr/icon.png",
     "category": "casual"
-  },
-  {
-    "id": "soccer-arcade-6",
-    "title": "Soccer Dash Arcade",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "arcade"
-  },
-  {
-    "id": "soccer-arcade-7",
-    "title": "Soccer Dash Arcade",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "arcade"
   }
 ]
