@@ -32,14 +32,6 @@
     "category": "arcade"
   },
   {
-    "id": "soccer-fps-1",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
-  },
-  {
     "id": "Mad-featured-2",
     "title": "Mad Guns",
     "url": "https://hosting.mirracloud.com/hosting/games/6901fc02885407de45ae0c6f/",
@@ -70,14 +62,6 @@
     "defaultParams": {},
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "arcade"
-  },
-  {
-    "id": "soccer-fps-2",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
   },
   {
     "id": "command-featured-3",
@@ -112,14 +96,6 @@
     "category": "arcade"
   },
   {
-    "id": "soccer-fps-3",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
-  },
-  {
     "id": "soccer-featured-4",
     "title": "Soccer Dash",
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
@@ -152,14 +128,6 @@
     "category": "arcade"
   },
   {
-    "id": "soccer-fps-4",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
-  },
-  {
     "id": "epic racing-featured-5",
     "title": "Epic Racing",
     "url": "https://hosting.mirracloud.com/hosting/games/694989709b55a29212796116/",
@@ -177,7 +145,7 @@
   },
   {
     "id": "blackkriver-mystery-casual-5",
-    "title": "Blackkriver MysteryCasual",
+    "title": "Blackkriver Mystery Casual",
     "url": "https://hosting.mirracloud.com/hosting/games/6949a9939b55a2921279611f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/blackkriver-mystery/icon.png",
@@ -190,14 +158,6 @@
     "defaultParams": {},
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "arcade"
-  },
-  {
-    "id": "soccer-fps-5",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
   },
   {
     "id": "100-doors-escape-new-6",
@@ -224,27 +184,11 @@
     "category": "arcade"
   },
   {
-    "id": "soccer-fps-6",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
-  },
-  {
     "id": "soccer-arcade-7",
     "title": "Soccer Dash Arcade",
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
     "defaultParams": {},
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "arcade"
-  },
-  {
-    "id": "soccer-fps-7",
-    "title": "Soccer Dash FPS",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "fps"
   }
 ]
