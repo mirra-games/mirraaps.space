@@ -199,14 +199,6 @@
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "fps"
   },
-  // {
-  //   "id": "soccer-featured-6",
-  //   "title": "Soccer Dash",
-  //   "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-  //   "defaultParams": {},
-  //   "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-  //   "category": "featured"
-  // },
   {
     "id": "soccer-new-6",
     "title": "Soccer Dash New",
@@ -239,14 +231,6 @@
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "fps"
   },
-  // {
-  //   "id": "soccer-featured-7",
-  //   "title": "Soccer Dash",
-  //   "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-  //   "defaultParams": {},
-  //   "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-  //   "category": "featured"
-  // },
   {
     "id": "soccer-new-7",
     "title": "Soccer Dash New",
