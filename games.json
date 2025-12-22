@@ -208,11 +208,11 @@
     "category": "new"
   },
   {
-    "id": "soccer-casual-6",
-    "title": "Soccer Dash Casual",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+    "id": "sticker-asmr-casual-6",
+    "title": "Sticker Asmr Casual",
+    "url": "https://hosting.mirracloud.com/hosting/games/6949abc69b55a29212796120/",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/sticker-asmr/icon.png",
     "category": "casual"
   },
   {
@@ -230,14 +230,6 @@
     "defaultParams": {},
     "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
     "category": "fps"
-  },
-  {
-    "id": "soccer-casual-7",
-    "title": "Soccer Dash Casual",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
-    "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
-    "category": "casual"
   },
   {
     "id": "soccer-arcade-7",
