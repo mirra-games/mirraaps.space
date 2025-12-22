@@ -4,7 +4,7 @@
     "title": "Soccer Dash",
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/soccer-dash/game-background.png",
     "category": "featured"
   },
   {
@@ -80,11 +80,11 @@
     "category": "fps"
   },
   {
-    "id": "soccer-featured-3",
-    "title": "Soccer Dash",
-    "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
+    "id": "command-featured-3",
+    "title": "Command Strike",
+    "url": "https://hosting.mirracloud.com/hosting/games/6905f111885407de45ae0c70/",
     "defaultParams": {},
-    "icon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "icon": "https://mirraaps.space/command-strike/cover.png",
     "category": "featured"
   },
   {
