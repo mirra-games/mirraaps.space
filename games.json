@@ -5,7 +5,19 @@
     "url": "https://hosting.mirracloud.com/hosting/games/694987ae8407fddba4bf1d0f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/epic-empire/cover.png",
-    "category": "featured"
+    "category": "featured",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "WASD to move",
+      "Mouse to rotate camera",
+      "Left Shift to sprint",
+      "F to interact with objects",
+      "P to open the settings panel"
+    ],
+    "description": "Epic Empire is an action-packed adventure that challenges your skills in dynamic arenas.",
+    "rating": 4.5
   },
   {
     "id": "construction-set-new-1",

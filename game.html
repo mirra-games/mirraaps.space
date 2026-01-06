@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="renderer" content="webkit|chrome">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge,chrome=1">
+    <link rel="icon" href="https://actimg.heytapimg.com/favicon.ico">
+    <title>Mirra Apps Game</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="app-root" class="app app--theme-dark">
+      <header class="app-header">
+        <div class="app-header-left">
+          <a href="./index.html" class="app-logo-link">
+            <img src="./assets/ui/logo.svg" alt="Mirra Apps icon" class="app-logo-icon">
+            <img src="./assets/ui/MirraApps.svg" alt="Mirra Apps" class="app-logo-wordmark">
+          </a>
+        </div>
+        <div class="app-header-center">
+          <div class="search-bar" id="search-bar">
+            <input
+              id="search-input"
+              class="search-input"
+              type="text"
+              placeholder="Search..."
+              autocomplete="off"
+            >
+            <button class="search-icon-button" type="button" id="search-button"></button>
+          </div>
+        </div>
+        <div class="app-header-right">
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </header>
+
+      <main class="app-main app-main--game">
+        <div class="game-layout">
+          <aside class="game-sidebar" id="game-sidebar">
+            <h2 class="game-sidebar-title">Games</h2>
+            <div class="game-sidebar-list" id="sidebar-games"></div>
+          </aside>
+
+          <section class="game-content">
+            <div class="game-frame-section">
+              <div class="game-frame-wrapper" id="game-frame-wrapper">
+                <iframe
+                  id="game-frame"
+                  class="game-frame"
+                  title="Game player"
+                  frameborder="0"
+                  allowfullscreen
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="game-frame-footer">
+                <h1 class="game-frame-title" id="game-title"></h1>
+                <div class="game-frame-actions">
+                  <button type="button" class="game-fullscreen-button" id="fullscreen-button" aria-label="Fullscreen"></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="game-meta">
+            <div class="game-meta-header">
+              <div class="game-meta-tags" id="game-tags"></div>
+              <div class="game-meta-rating" id="game-rating">
+                <div class="game-rating-score" id="game-rating-score"></div>
+                <div class="game-rating-stars" id="game-rating-stars"></div>
+              </div>
+            </div>
+
+            <div class="game-meta-section">
+              <h3 class="game-meta-title">Developer:</h3>
+              <p class="game-meta-text" id="game-developer">Mirra Games</p>
+            </div>
+
+            <div class="game-meta-section">
+              <h3 class="game-meta-title">Technology:</h3>
+              <p class="game-meta-text" id="game-technology">HTML5</p>
+            </div>
+
+            <div class="game-meta-section">
+              <h3 class="game-meta-title">Controls</h3>
+              <ul class="game-meta-list" id="game-controls"></ul>
+            </div>
+
+            <div class="game-meta-section">
+              <h3 class="game-meta-title">Description</h3>
+              <p class="game-meta-text" id="game-description">Loading description...</p>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <section class="search-overlay" id="search-overlay">
+        <div class="search-overlay-header">
+          <button class="back-button" type="button" id="search-back"></button>
+          <div class="search-overlay-input-wrapper">
+            <input
+              id="search-input-overlay"
+              class="search-input search-input--overlay"
+              type="text"
+              placeholder="Search game"
+              autocomplete="off"
+            >
+          </div>
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </section>
+
+      <footer class="app-footer">
+        <a href="./about.html" class="footer-link">About</a>
+        <span class="footer-separator">|</span>
+        <a href="./privacy.html" class="footer-link">Privacy Policy</a>
+      </footer>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

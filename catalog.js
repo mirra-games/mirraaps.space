@@ -56,7 +56,6 @@ function createGameCard(game, variant) {
   img.className = 'game-thumb-img';
   img.src = game.icon || '';
   img.alt = game.title || game.id || 'Game';
-
   thumb.appendChild(img);
 
   const title = document.createElement('div');
@@ -68,8 +67,9 @@ function createGameCard(game, variant) {
 
   card.addEventListener('click', () => {
     saveContinueGame(game);
-    const url = buildGameUrl(game);
-    window.location.href = url;
+    const params = new URLSearchParams();
+    params.set('id', game.id);
+    window.location.href = `./game.html?${params.toString()}`;
   });
 
   return card;
@@ -269,8 +269,9 @@ function setupSearch(games) {
 
       row.addEventListener('click', () => {
         saveContinueGame(game);
-        const url = buildGameUrl(game);
-        window.location.href = url;
+        const params = new URLSearchParams();
+        params.set('id', game.id);
+        window.location.href = `./game.html?${params.toString()}`;
       });
 
       resultsContainer.appendChild(row);
