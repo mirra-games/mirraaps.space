@@ -58,17 +58,6 @@ body {
   align-items: center;
 }
 
-.app-logo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: none;
-  text-decoration: none;
-}
-
 .app-logo-icon {
   height: 26px;
   margin-right: 8px;
@@ -140,6 +129,17 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, #ffd76a 0, #ffb326 60%, #f39a18 100%);
   box-shadow: 0 0 0 2px rgba(255, 210, 120, 0.9);
+}
+
+.app-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  text-decoration: none;
 }
 
 .app--theme-light .theme-toggle::after {
@@ -781,45 +781,37 @@ body {
 }
 
 .game-fullscreen-button {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border-subtle);
-  background: rgba(0, 0, 0, 0.32);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  color: white; /* Цвет иконки SVG */
   cursor: pointer;
-  position: relative;
+  transition: all 0.3s ease;
+  padding: 8px; /* Отступ для SVG */
+}
+
+.game-fullscreen-button svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.game-fullscreen-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: scale(1.1);
+}
+
+.game-fullscreen-button:hover svg {
+  transform: scale(1.1); /* Иконка чуть растет внутри */
 }
 
 .app--theme-light .game-fullscreen-button {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.game-fullscreen-button::before,
-.game-fullscreen-button::after {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: 0;
-}
-
-.game-fullscreen-button::before {
-  top: 7px;
-  left: 7px;
-  border-top: 2px solid rgba(255, 255, 255, 0.9);
-  border-left: 2px solid rgba(255, 255, 255, 0.9);
-}
-
-.game-fullscreen-button::after {
-  bottom: 7px;
-  right: 7px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
-  border-right: 2px solid rgba(255, 255, 255, 0.9);
-}
-
-.app--theme-light .game-fullscreen-button::before,
-.app--theme-light .game-fullscreen-button::after {
-  border-color: rgba(0, 0, 0, 0.85);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .game-frame-wrapper {
