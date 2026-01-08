@@ -33,6 +33,10 @@ body {
   min-height: 100vh;
 }
 
+body.is-game-pseudo-fullscreen {
+  overflow: hidden;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -129,17 +133,6 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, #ffd76a 0, #ffb326 60%, #f39a18 100%);
   box-shadow: 0 0 0 2px rgba(255, 210, 120, 0.9);
-}
-
-.app-logo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: none;
-  text-decoration: none;
 }
 
 .app--theme-light .theme-toggle::after {
@@ -822,13 +815,6 @@ body {
   border: 1px solid var(--color-border-subtle);
 }
 
-.game-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  display: block;
-}
-
 .game-frame-wrapper:fullscreen,
 .game-frame-wrapper:-webkit-full-screen,
 .game-frame-wrapper:-moz-full-screen {
@@ -844,6 +830,37 @@ body {
   width: 100%;
   height: 100%;
   aspect-ratio: auto;
+}
+
+.game-frame-wrapper--pseudo-fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  border-radius: 0;
+  border: none;
+  background: #000;
+  z-index: 9999;
+}
+
+.game-frame-wrapper--pseudo-fullscreen .game-frame {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.game-fullscreen-button--overlay {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10000;
+}
+
+.game-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
 }
 
 .game-meta {

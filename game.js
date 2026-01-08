@@ -206,6 +206,25 @@ function setupFullscreen(frameWrapper) {
   const button = document.getElementById('fullscreen-button');
   if (!button || !frameWrapper) return;
 
+  const PSEUDO_CLASS = 'game-frame-wrapper--pseudo-fullscreen';
+  const BUTTON_OVERLAY_CLASS = 'game-fullscreen-button--overlay';
+
+  function isPseudoFullscreen() {
+    return frameWrapper.classList.contains(PSEUDO_CLASS);
+  }
+
+  function enterPseudoFullscreen() {
+    frameWrapper.classList.add(PSEUDO_CLASS);
+    document.body.classList.add('is-game-pseudo-fullscreen');
+    button.classList.add(BUTTON_OVERLAY_CLASS);
+  }
+
+  function exitPseudoFullscreen() {
+    frameWrapper.classList.remove(PSEUDO_CLASS);
+    document.body.classList.remove('is-game-pseudo-fullscreen');
+    button.classList.remove(BUTTON_OVERLAY_CLASS);
+  }
+
   function getFullscreenElement() {
     return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
   }
@@ -224,11 +243,41 @@ function setupFullscreen(frameWrapper) {
     if (document.msExitFullscreen) return document.msExitFullscreen();
   }
 
-  button.addEventListener('click', () => {
+  function canUseFullscreenApi() {
+    return Boolean(
+      frameWrapper.requestFullscreen ||
+      frameWrapper.webkitRequestFullscreen ||
+      frameWrapper.mozRequestFullScreen ||
+      frameWrapper.msRequestFullscreen
+    );
+  }
+
+  button.addEventListener('click', async () => {
     if (getFullscreenElement()) {
       exitFs();
-    } else {
-      requestFs(frameWrapper);
+      return;
+    }
+
+    if (isPseudoFullscreen()) {
+      exitPseudoFullscreen();
+      return;
+    }
+
+    if (!canUseFullscreenApi()) {
+      enterPseudoFullscreen();
+      return;
+    }
+
+    try {
+      await requestFs(frameWrapper);
+    } catch (_) {
+      enterPseudoFullscreen();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isPseudoFullscreen()) {
+      exitPseudoFullscreen();
     }
   });
 }
