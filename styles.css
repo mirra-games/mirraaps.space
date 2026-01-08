@@ -33,6 +33,10 @@ body {
   min-height: 100vh;
 }
 
+body.is-game-fullscreen {
+  overflow: hidden;
+}
+
 body.is-game-pseudo-fullscreen {
   overflow: hidden;
 }
@@ -846,6 +850,7 @@ body.is-game-pseudo-fullscreen .game-mobile-bottom {
   position: fixed;
   inset: 0;
   width: 100vw;
+  height: 100vh;
   height: 100dvh;
   border-radius: 0;
   border: none;

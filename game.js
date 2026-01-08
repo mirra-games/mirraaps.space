@@ -259,6 +259,15 @@ function setupFullscreen(frameWrapper) {
     if (document.msExitFullscreen) return document.msExitFullscreen();
   }
 
+  function canExitFullscreen() {
+    return Boolean(
+      document.exitFullscreen ||
+      document.webkitExitFullscreen ||
+      document.mozCancelFullScreen ||
+      document.msExitFullscreen
+    );
+  }
+
   function canUseFullscreenApi(el) {
     if (!el) return false;
     return Boolean(
@@ -271,10 +280,12 @@ function setupFullscreen(frameWrapper) {
 
   button.addEventListener('click', async () => {
     if (getFullscreenElement()) {
-      try {
-        await exitFs();
-      } finally {
-        syncButtonState();
+      if (canExitFullscreen()) {
+        try {
+          await exitFs();
+        } finally {
+          syncButtonState();
+        }
       }
       return;
     }
@@ -285,8 +296,9 @@ function setupFullscreen(frameWrapper) {
       return;
     }
 
-    const fsTarget = canUseFullscreenApi(frameEl) ? frameEl : frameWrapper;
-    if (!canUseFullscreenApi(fsTarget)) {
+    const fsTargets = [frameWrapper, frameEl].filter(Boolean);
+    const fsTarget = fsTargets.find((el) => canUseFullscreenApi(el));
+    if (!fsTarget) {
       enterPseudoFullscreen();
       syncButtonState();
       return;
@@ -312,6 +324,16 @@ function setupFullscreen(frameWrapper) {
   document.addEventListener('webkitfullscreenchange', syncButtonState);
   document.addEventListener('mozfullscreenchange', syncButtonState);
   document.addEventListener('MSFullscreenChange', syncButtonState);
+
+  function onFullscreenError() {
+    if (!getFullscreenElement() && !isPseudoFullscreen()) {
+      enterPseudoFullscreen();
+      syncButtonState();
+    }
+  }
+
+  document.addEventListener('fullscreenerror', onFullscreenError);
+  document.addEventListener('webkitfullscreenerror', onFullscreenError);
 
   syncButtonState();
 }
@@ -502,13 +524,52 @@ async function initGamePage() {
     return;
   }
 
-  const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
-  if (isMobile) {
-    const hero = document.getElementById('game-mobile-hero');
-    if (hero && frameWrapper.parentElement !== hero) {
-      hero.insertBefore(frameWrapper, hero.firstChild);
+  const originalParent = frameWrapper.parentElement;
+  const originalNextSibling = frameWrapper.nextSibling;
+  const hero = document.getElementById('game-mobile-hero');
+  const mqMobile = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+
+  function isFullscreenLikeActive() {
+    return Boolean(
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement ||
+      frameWrapper.classList.contains('game-frame-wrapper--pseudo-fullscreen')
+    );
+  }
+
+  function syncFramePlacement() {
+    if (isFullscreenLikeActive()) return;
+
+    const isMobile = mqMobile ? mqMobile.matches : false;
+    if (isMobile) {
+      if (hero && frameWrapper.parentElement !== hero) {
+        hero.insertBefore(frameWrapper, hero.firstChild);
+      }
+      return;
+    }
+
+    if (!originalParent) return;
+    if (frameWrapper.parentElement === originalParent) return;
+
+    if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
+      originalParent.insertBefore(frameWrapper, originalNextSibling);
+    } else {
+      originalParent.appendChild(frameWrapper);
     }
   }
+
+  syncFramePlacement();
+  if (mqMobile) {
+    if (mqMobile.addEventListener) {
+      mqMobile.addEventListener('change', syncFramePlacement);
+    } else if (mqMobile.addListener) {
+      mqMobile.addListener(syncFramePlacement);
+    }
+  }
+  window.addEventListener('resize', syncFramePlacement);
+  window.addEventListener('orientationchange', () => setTimeout(syncFramePlacement, 50));
 
   titleEl.textContent = game.title || game.id || 'Game';
   if (categoryEl) {
