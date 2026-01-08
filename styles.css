@@ -1021,5 +1021,87 @@ body {
 
   .game-sidebar {
     order: -1;
+    padding: 10px 10px 8px;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .game-sidebar-title {
+    margin-bottom: 8px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  .game-sidebar-list {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .game-sidebar-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .game-sidebar-item {
+    min-width: 190px;
+    padding: 6px 6px;
+    border-radius: 14px;
+  }
+
+  .game-sidebar-thumb {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+  }
+
+  .game-sidebar-title-text {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+
+  .game-content {
+    padding: 10px 10px 12px;
+  }
+
+  .game-frame-section {
+    position: relative;
+  }
+
+  .game-frame {
+    aspect-ratio: auto;
+    height: min(56vh, 520px);
+    min-height: 240px;
+  }
+
+  .game-frame-footer {
+    margin-top: 10px;
+  }
+
+  .game-frame-title {
+    font-size: 16px;
+  }
+
+  .game-fullscreen-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .app--theme-light .game-fullscreen-button {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .game-meta {
+    padding: 10px 10px 12px;
   }
 }
