@@ -1040,7 +1040,7 @@ body.is-game-pseudo-fullscreen {
 
 @media (max-width: 768px) {
   .app-main--game {
-    padding: 12px 10px 16px;
+    padding: 12px 10px calc(16px + 74px + env(safe-area-inset-bottom));
   }
 
   .game-layout {
@@ -1055,10 +1055,12 @@ body.is-game-pseudo-fullscreen {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
-    height: min(46vh, 360px);
+    height: min(56vh, 520px);
     min-height: 240px;
     background: radial-gradient(120% 120% at 30% 20%, rgba(120, 90, 255, 0.55) 0%, rgba(5, 8, 23, 0.92) 62%, rgba(3, 4, 26, 0.98) 100%);
     border: 1px solid var(--color-border-subtle);
+    touch-action: manipulation;
+    z-index: 1;
   }
 
   .game-mobile-hero::before {
@@ -1071,30 +1073,33 @@ body.is-game-pseudo-fullscreen {
     filter: blur(10px);
     transform: scale(1.07);
     opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .game-mobile-hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(2, 4, 16, 0.15) 0%, rgba(2, 4, 16, 0.55) 35%, rgba(2, 4, 16, 0.95) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .game-mobile-play {
+  .game-mobile-hero .game-frame-wrapper {
     position: absolute;
-    left: 50%;
-    top: 58%;
-    transform: translate(-50%, -50%);
-    padding: 14px 36px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: linear-gradient(90deg, rgba(135, 110, 255, 0.95) 0%, rgba(118, 85, 255, 0.95) 40%, rgba(100, 70, 245, 0.95) 100%);
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
-    cursor: pointer;
+    inset: 0;
     z-index: 2;
+    border-radius: 18px;
+    border: none;
+    pointer-events: auto;
+  }
+
+  .game-mobile-hero .game-frame {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    pointer-events: auto;
+    touch-action: manipulation;
   }
 
   .game-mobile-card {

@@ -356,14 +356,16 @@ function populateMobileMoreGames(games, currentId) {
     name.className = 'game-mobile-more-name';
     name.textContent = g.title || g.id || 'Game';
 
-    const rating = document.createElement('div');
-    rating.className = 'game-mobile-more-rating';
-    const score = typeof g.rating === 'number' && !Number.isNaN(g.rating) ? g.rating.toFixed(1).replace(/\.0$/, '') : '4.0';
-    rating.textContent = `★ ${score}`;
-
     item.appendChild(thumb);
     item.appendChild(name);
-    item.appendChild(rating);
+
+    if (typeof g.rating === 'number' && !Number.isNaN(g.rating)) {
+      const rating = document.createElement('div');
+      rating.className = 'game-mobile-more-rating';
+      const score = g.rating.toFixed(1).replace(/\.0$/, '');
+      rating.textContent = `★ ${score}`;
+      item.appendChild(rating);
+    }
 
     item.addEventListener('click', () => {
       saveContinueGame(g);
@@ -439,7 +441,6 @@ function fillMobileGameInfo(game) {
 }
 
 function setupMobileActions(frameWrapper) {
-  const playTop = document.getElementById('play-now-button');
   const playBottom = document.getElementById('play-now-button-bottom');
   const fsBottom = document.getElementById('play-fullscreen-button');
   const fsButton = document.getElementById('fullscreen-button');
@@ -451,12 +452,7 @@ function setupMobileActions(frameWrapper) {
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
-  function playNow() {
-    scrollToFrame();
-  }
-
-  if (playTop) playTop.addEventListener('click', playNow);
-  if (playBottom) playBottom.addEventListener('click', playNow);
+  if (playBottom) playBottom.addEventListener('click', scrollToFrame);
   if (fsBottom && fsButton) {
     fsBottom.addEventListener('click', () => fsButton.click());
   }
@@ -499,6 +495,14 @@ async function initGamePage() {
   const frameWrapper = document.getElementById('game-frame-wrapper');
   if (!titleEl || !sidebarList || !frameEl || !frameWrapper) {
     return;
+  }
+
+  const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+  if (isMobile) {
+    const hero = document.getElementById('game-mobile-hero');
+    if (hero && frameWrapper.parentElement !== hero) {
+      hero.insertBefore(frameWrapper, hero.firstChild);
+    }
   }
 
   titleEl.textContent = game.title || game.id || 'Game';
