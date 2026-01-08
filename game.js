@@ -205,6 +205,7 @@ function createSidebarItem(game, currentId) {
 function setupFullscreen(frameWrapper) {
   const button = document.getElementById('fullscreen-button');
   const buttonText = document.getElementById('fullscreen-button-text');
+  const frameEl = document.getElementById('game-frame');
   if (!button || !frameWrapper) return;
 
   const PSEUDO_CLASS = 'game-frame-wrapper--pseudo-fullscreen';
@@ -239,7 +240,9 @@ function setupFullscreen(frameWrapper) {
   }
 
   function syncButtonState() {
-    setButtonLabel(Boolean(getFullscreenElement() || isPseudoFullscreen()));
+    const isFs = Boolean(getFullscreenElement());
+    document.body.classList.toggle('is-game-fullscreen', isFs);
+    setButtonLabel(Boolean(isFs || isPseudoFullscreen()));
   }
 
   function requestFs(el) {
@@ -256,12 +259,13 @@ function setupFullscreen(frameWrapper) {
     if (document.msExitFullscreen) return document.msExitFullscreen();
   }
 
-  function canUseFullscreenApi() {
+  function canUseFullscreenApi(el) {
+    if (!el) return false;
     return Boolean(
-      frameWrapper.requestFullscreen ||
-      frameWrapper.webkitRequestFullscreen ||
-      frameWrapper.mozRequestFullScreen ||
-      frameWrapper.msRequestFullscreen
+      el.requestFullscreen ||
+      el.webkitRequestFullscreen ||
+      el.mozRequestFullScreen ||
+      el.msRequestFullscreen
     );
   }
 
@@ -281,14 +285,15 @@ function setupFullscreen(frameWrapper) {
       return;
     }
 
-    if (!canUseFullscreenApi()) {
+    const fsTarget = canUseFullscreenApi(frameEl) ? frameEl : frameWrapper;
+    if (!canUseFullscreenApi(fsTarget)) {
       enterPseudoFullscreen();
       syncButtonState();
       return;
     }
 
     try {
-      await requestFs(frameWrapper);
+      await requestFs(fsTarget);
     } catch (_) {
       enterPseudoFullscreen();
     } finally {

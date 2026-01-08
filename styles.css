@@ -37,6 +37,11 @@ body.is-game-pseudo-fullscreen {
   overflow: hidden;
 }
 
+body.is-game-fullscreen .game-mobile-bottom,
+body.is-game-pseudo-fullscreen .game-mobile-bottom {
+  display: none;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -747,6 +752,7 @@ body.is-game-pseudo-fullscreen {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 16px;
 }
 
 .game-frame-footer {
@@ -1103,7 +1109,7 @@ body.is-game-pseudo-fullscreen {
   }
 
   .game-mobile-card {
-    margin-top: -22px;
+    margin-top: 12px;
     position: relative;
     z-index: 3;
     background: var(--color-surface);
