@@ -204,6 +204,7 @@ function createSidebarItem(game, currentId) {
 
 function setupFullscreen(frameWrapper) {
   const button = document.getElementById('fullscreen-button');
+  const buttonText = document.getElementById('fullscreen-button-text');
   if (!button || !frameWrapper) return;
 
   const PSEUDO_CLASS = 'game-frame-wrapper--pseudo-fullscreen';
@@ -227,6 +228,18 @@ function setupFullscreen(frameWrapper) {
 
   function getFullscreenElement() {
     return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+  }
+
+  function setButtonLabel(isOn) {
+    const label = isOn ? 'Уменьшить' : 'На весь экран';
+    if (buttonText) {
+      buttonText.textContent = label;
+    }
+    button.setAttribute('aria-label', label);
+  }
+
+  function syncButtonState() {
+    setButtonLabel(Boolean(getFullscreenElement() || isPseudoFullscreen()));
   }
 
   function requestFs(el) {
@@ -254,17 +267,23 @@ function setupFullscreen(frameWrapper) {
 
   button.addEventListener('click', async () => {
     if (getFullscreenElement()) {
-      exitFs();
+      try {
+        await exitFs();
+      } finally {
+        syncButtonState();
+      }
       return;
     }
 
     if (isPseudoFullscreen()) {
       exitPseudoFullscreen();
+      syncButtonState();
       return;
     }
 
     if (!canUseFullscreenApi()) {
       enterPseudoFullscreen();
+      syncButtonState();
       return;
     }
 
@@ -272,14 +291,24 @@ function setupFullscreen(frameWrapper) {
       await requestFs(frameWrapper);
     } catch (_) {
       enterPseudoFullscreen();
+    } finally {
+      syncButtonState();
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isPseudoFullscreen()) {
       exitPseudoFullscreen();
+      syncButtonState();
     }
   });
+
+  document.addEventListener('fullscreenchange', syncButtonState);
+  document.addEventListener('webkitfullscreenchange', syncButtonState);
+  document.addEventListener('mozfullscreenchange', syncButtonState);
+  document.addEventListener('MSFullscreenChange', syncButtonState);
+
+  syncButtonState();
 }
 
 async function initGamePage() {
@@ -376,7 +405,7 @@ async function initGamePage() {
       if (ratingStarsEl) {
         ratingStarsEl.innerHTML = '';
         const maxStars = 5;
-        const starsValue = clamped / 2; // 0..5
+        const starsValue = clamped / 2;
         for (let i = 0; i < maxStars; i += 1) {
           const star = document.createElement('span');
           star.className = 'game-rating-star';

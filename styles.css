@@ -780,10 +780,10 @@ body.is-game-pseudo-fullscreen {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
-  color: white; /* Цвет иконки SVG */
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 8px; /* Отступ для SVG */
+  padding: 8px;
 }
 
 .game-fullscreen-button svg {
@@ -792,13 +792,17 @@ body.is-game-pseudo-fullscreen {
   transition: transform 0.3s ease;
 }
 
+.game-fullscreen-button__text {
+  display: none;
+}
+
 .game-fullscreen-button:hover {
   background: rgba(0, 0, 0, 0.6);
   transform: scale(1.1);
 }
 
 .game-fullscreen-button:hover svg {
-  transform: scale(1.1); /* Иконка чуть растет внутри */
+  transform: scale(1.1);
 }
 
 .app--theme-light .game-fullscreen-button {
@@ -1031,6 +1035,29 @@ body.is-game-pseudo-fullscreen {
     padding: 12px 10px 16px;
   }
 
+  .game-fullscreen-button {
+    width: auto;
+    height: 36px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .game-fullscreen-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .game-fullscreen-button__text {
+    display: inline;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
   .game-layout {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1105,9 +1132,6 @@ body.is-game-pseudo-fullscreen {
     position: absolute;
     top: 12px;
     right: 12px;
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(6px);
