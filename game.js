@@ -311,6 +311,157 @@ function setupFullscreen(frameWrapper) {
   syncButtonState();
 }
 
+function setupMobileTabs() {
+  const tabs = Array.from(document.querySelectorAll('.game-mobile-tab'));
+  const panels = Array.from(document.querySelectorAll('.game-mobile-panel'));
+  if (tabs.length === 0 || panels.length === 0) return;
+
+  function activate(tabKey) {
+    tabs.forEach((t) => t.classList.toggle('game-mobile-tab--active', t.dataset.tab === tabKey));
+    panels.forEach((p) => p.classList.toggle('game-mobile-panel--active', p.dataset.panel === tabKey));
+  }
+
+  tabs.forEach((t) => {
+    t.addEventListener('click', () => {
+      activate(t.dataset.tab);
+    });
+  });
+}
+
+function populateMobileMoreGames(games, currentId) {
+  const list = document.getElementById('game-mobile-more');
+  if (!list) return;
+  list.innerHTML = '';
+
+  const pool = games.filter((g) => g && g.id && g.id !== currentId);
+  for (let i = pool.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+
+  const MAX = 8;
+  pool.slice(0, Math.min(MAX, pool.length)).forEach((g) => {
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.className = 'game-mobile-more-item';
+
+    const thumb = document.createElement('div');
+    thumb.className = 'game-mobile-more-thumb';
+    const img = document.createElement('img');
+    img.src = g.icon || '';
+    img.alt = g.title || g.id || 'Game';
+    thumb.appendChild(img);
+
+    const name = document.createElement('div');
+    name.className = 'game-mobile-more-name';
+    name.textContent = g.title || g.id || 'Game';
+
+    const rating = document.createElement('div');
+    rating.className = 'game-mobile-more-rating';
+    const score = typeof g.rating === 'number' && !Number.isNaN(g.rating) ? g.rating.toFixed(1).replace(/\.0$/, '') : '4.0';
+    rating.textContent = `★ ${score}`;
+
+    item.appendChild(thumb);
+    item.appendChild(name);
+    item.appendChild(rating);
+
+    item.addEventListener('click', () => {
+      saveContinueGame(g);
+      const params = new URLSearchParams(window.location.search);
+      params.set('id', g.id);
+      window.location.href = `./game.html?${params.toString()}`;
+    });
+
+    list.appendChild(item);
+  });
+}
+
+function fillMobileGameInfo(game) {
+  const titleEl = document.getElementById('game-mobile-title');
+  const iconEl = document.getElementById('game-mobile-icon');
+  const ratingBadgeEl = document.getElementById('game-mobile-rating-badge');
+  const tagsEl = document.getElementById('game-mobile-tags');
+  const developerEl = document.getElementById('game-mobile-developer');
+  const technologyEl = document.getElementById('game-mobile-technology');
+  const descriptionEl = document.getElementById('game-mobile-description');
+  const controlsEl = document.getElementById('game-mobile-controls');
+  const heroEl = document.getElementById('game-mobile-hero');
+
+  if (titleEl) titleEl.textContent = game.title || game.id || 'Game';
+  if (iconEl) iconEl.src = game.icon || '';
+
+  if (tagsEl) {
+    tagsEl.innerHTML = '';
+    const tags = Array.isArray(game.tags) ? game.tags : [];
+    const labelMap = {
+      desktop: 'Desktop',
+      tablet: 'Tablet',
+      mobile: 'Mobile'
+    };
+    tags.forEach((tag) => {
+      const key = String(tag).toLowerCase();
+      const label = labelMap[key] || tag;
+      const span = document.createElement('span');
+      span.className = `game-tag game-tag--${key}`;
+      span.textContent = label;
+      tagsEl.appendChild(span);
+    });
+  }
+
+  if (developerEl) developerEl.textContent = game.developer || 'Mirra Games';
+  if (technologyEl) technologyEl.textContent = game.technology || 'HTML5';
+  if (descriptionEl) descriptionEl.textContent = game.description || 'Enjoy this Mirra Apps game right in your browser.';
+
+  if (controlsEl) {
+    controlsEl.innerHTML = '';
+    const controls = Array.isArray(game.controls) ? game.controls : [];
+    controls.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      controlsEl.appendChild(li);
+    });
+  }
+
+  if (ratingBadgeEl) {
+    if (typeof game.rating === 'number' && !Number.isNaN(game.rating)) {
+      const clamped = Math.max(0, Math.min(10, game.rating));
+      const display = clamped.toFixed(1).replace(/\.0$/, '');
+      ratingBadgeEl.textContent = display;
+    } else {
+      ratingBadgeEl.textContent = '';
+    }
+  }
+
+  if (heroEl) {
+    const heroImage = game.banner || game.cover || game.hero || game.icon || '';
+    heroEl.style.setProperty('--game-mobile-hero-image', heroImage ? `url("${heroImage}")` : 'none');
+  }
+}
+
+function setupMobileActions(frameWrapper) {
+  const playTop = document.getElementById('play-now-button');
+  const playBottom = document.getElementById('play-now-button-bottom');
+  const fsBottom = document.getElementById('play-fullscreen-button');
+  const fsButton = document.getElementById('fullscreen-button');
+  if (!frameWrapper) return;
+
+  function scrollToFrame() {
+    const rect = frameWrapper.getBoundingClientRect();
+    const y = rect.top + window.scrollY - 10;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  function playNow() {
+    scrollToFrame();
+  }
+
+  if (playTop) playTop.addEventListener('click', playNow);
+  if (playBottom) playBottom.addEventListener('click', playNow);
+  if (fsBottom && fsButton) {
+    fsBottom.addEventListener('click', () => fsButton.click());
+  }
+}
+
 async function initGamePage() {
   const params = new URLSearchParams(window.location.search);
   const gameId = params.get('id');
@@ -451,6 +602,11 @@ async function initGamePage() {
 
   setupFullscreen(frameWrapper);
   setupSearch(games);
+
+  fillMobileGameInfo(game);
+  setupMobileTabs();
+  populateMobileMoreGames(games, game.id);
+  setupMobileActions(frameWrapper);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

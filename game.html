@@ -40,6 +40,61 @@
       </header>
 
       <main class="app-main app-main--game">
+        <section class="game-mobile" id="game-mobile">
+          <div class="game-mobile-hero" id="game-mobile-hero">
+            <div class="game-mobile-hero-overlay"></div>
+            <button type="button" class="game-mobile-play" id="play-now-button" aria-label="Play Now">Play Now</button>
+          </div>
+
+          <div class="game-mobile-card">
+            <div class="game-mobile-card-top">
+              <div class="game-mobile-icon">
+                <img id="game-mobile-icon" alt="Game icon">
+              </div>
+
+              <div class="game-mobile-info">
+                <h1 class="game-mobile-title" id="game-mobile-title"></h1>
+                <div class="game-mobile-tags-row">
+                  <span class="game-mobile-rating-badge" id="game-mobile-rating-badge"></span>
+                  <div class="game-mobile-tags" id="game-mobile-tags"></div>
+                </div>
+                <div class="game-mobile-meta">
+                  <div class="game-mobile-meta-row">
+                    <span class="game-mobile-meta-label">Developer:</span>
+                    <span class="game-mobile-meta-value" id="game-mobile-developer"></span>
+                  </div>
+                  <div class="game-mobile-meta-row">
+                    <span class="game-mobile-meta-label">Technology:</span>
+                    <span class="game-mobile-meta-value" id="game-mobile-technology"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-mobile-tabs" role="tablist" aria-label="Game details">
+              <button type="button" class="game-mobile-tab game-mobile-tab--active" data-tab="description">Description</button>
+              <button type="button" class="game-mobile-tab" data-tab="controls">Controls</button>
+            </div>
+
+            <div class="game-mobile-tabpanels">
+              <div class="game-mobile-panel game-mobile-panel--active" data-panel="description">
+                <p class="game-mobile-text" id="game-mobile-description">Loading description...</p>
+              </div>
+              <div class="game-mobile-panel" data-panel="controls">
+                <ul class="game-meta-list" id="game-mobile-controls"></ul>
+              </div>
+            </div>
+          </div>
+
+          <section class="game-mobile-more">
+            <div class="game-mobile-more-header">
+              <h2 class="game-mobile-more-title">More games</h2>
+              <a class="game-mobile-more-link" href="./index.html" aria-label="More games">↗</a>
+            </div>
+            <div class="game-mobile-more-list" id="game-mobile-more"></div>
+          </section>
+        </section>
+
         <div class="game-layout">
           <aside class="game-sidebar" id="game-sidebar">
             <h2 class="game-sidebar-title">Games</h2>
@@ -107,6 +162,18 @@
           </aside>
         </div>
       </main>
+
+      <div class="game-mobile-bottom" id="game-mobile-bottom">
+        <button type="button" class="game-mobile-bottom-play" id="play-now-button-bottom">Play Now</button>
+        <button type="button" class="game-mobile-bottom-fs" id="play-fullscreen-button" aria-label="Fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5H5V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 5H19V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 15V19H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 15V19H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
 
       <section class="search-overlay" id="search-overlay">
         <div class="search-overlay-header">
