@@ -46,6 +46,13 @@ body.is-game-pseudo-fullscreen .game-mobile-bottom {
   display: none;
 }
 
+body.is-game-pseudo-fullscreen .game-mobile-card,
+body.is-game-pseudo-fullscreen .game-mobile-tabs,
+body.is-game-pseudo-fullscreen .game-mobile-panel,
+body.is-game-pseudo-fullscreen .game-mobile-more {
+  display: none !important;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -821,6 +828,32 @@ body.is-game-pseudo-fullscreen .game-mobile-bottom {
   border-color: rgba(0, 0, 0, 0.1);
 }
 
+.game-fullscreen-button--overlay {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 2147483647;
+}
+
+.game-exit-fullscreen-button {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top));
+  left: calc(12px + env(safe-area-inset-left));
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  cursor: pointer;
+  z-index: 2147483647;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+  padding: 0;
+}
+
 .game-frame-wrapper {
   position: relative;
   border-radius: 16px;
@@ -855,20 +888,13 @@ body.is-game-pseudo-fullscreen .game-mobile-bottom {
   border-radius: 0;
   border: none;
   background: #000;
-  z-index: 9999;
+  z-index: 2147483646;
 }
 
 .game-frame-wrapper--pseudo-fullscreen .game-frame {
   width: 100%;
   height: 100%;
   aspect-ratio: auto;
-}
-
-.game-fullscreen-button--overlay {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 10000;
 }
 
 .game-frame {
@@ -1113,6 +1139,18 @@ body.is-game-pseudo-fullscreen .game-mobile-bottom {
     touch-action: manipulation;
   }
 
+  .game-mobile-hero .game-frame-wrapper.game-frame-wrapper--pseudo-fullscreen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    border: none;
+    background: #000;
+    z-index: 9999;
+  }
+
   .game-mobile-card {
     margin-top: 12px;
     position: relative;
@@ -1326,6 +1364,10 @@ body.is-game-pseudo-fullscreen .game-mobile-bottom {
     margin: 0;
     font-size: 14px;
     font-weight: 700;
+  }
+
+  .app--theme-light .game-mobile-more-title {
+    color: rgba(11, 16, 32, 0.92);
   }
 
   .game-mobile-more-link {
