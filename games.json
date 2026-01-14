@@ -198,7 +198,17 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b50a9b55a29212796124/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/ragdoll-rock-climber/icon.png",
-    "category": "arcade"
+    "category": "arcade",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Your goal is simple but challenging - climb higher, push the limits and reach the top.",
+      "PC controls: Left and right mouse button.",
+      "On your phone: Tap the left and right half of the screen."
+    ],
+    "description": "Your goal is simple but challenging - climb higher, push the limits and reach the top.\nPC controls: Left and right mouse button.\nOn your phone: Tap the left and right half of the screen.",
+    "rating": 7.3
   },
   {
     "id": "soccer-featured-4",
