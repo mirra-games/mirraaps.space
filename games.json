@@ -344,7 +344,7 @@
   {
     "id": "runic-curse-new-5",
     "title": "Runic Curse New",
-    "url": "https://hosting.mirracloud.com/hosting/games/6949993a9b55a2921279611b/",
+    "url": "https://hosting.mirracloud.com/hosting/games/6949afb89b55a29212796122/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/runic-curse/icon.png",
     "iframeIcon": "https://mirraaps.space/runic-curse/icon.png",
@@ -392,7 +392,17 @@
     "icon": "https://mirraaps.space/bed-wars/icon.png",
     "iframeIcon": "https://mirraaps.space/bed-wars/icon.png",
     "iframeCover": "https://mirraaps.space/bed-wars/icon.png",
-    "category": "arcade"
+    "category": "arcade",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "The goal of the game is to capture and destroy all enemy beds while keeping your own bed.",
+      "Control on a mobile device: touch / swipe.",
+      "Control on desktop: left mouse button."
+    ],
+    "description": "Welcome to the gladiatorial fights of stickmen for cribs! Take on the role of a commander, control your squad of stickmen, upgrade your soldiers, upgrade your base defense, get resources, fight on the battlefield with other players and capture enemy bases. And the enemy bases are their beds. The game has many levels. With each level, the base becomes more and more difficult to defend, and opponents become more aggressive and powerful. Will you be able to maintain your position as a Leader and defeat everyone? Game Features: - Excellent 3D graphics; - Epic battles; - Pumping system; - Lots of levels.",
+    "rating": 8.7
   },
   {
     "id": "100-doors-escape-new-6",
@@ -402,7 +412,16 @@
     "icon": "https://mirraaps.space/100-dors-escape/icon.png",
     "iframeIcon": "https://mirraaps.space/100-dors-escape/icon.png",
     "iframeCover": "https://mirraaps.space/100-dors-escape/cover.png",
-    "category": "new"
+    "category": "new",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Control on a mobile device - touch/ swipe on game elements on the screen",
+      "PC control - left mouse click on game elements"
+    ],
+    "description": "100 Doors: Escape from the room is a stunningly beautiful quest in the genre of 100 doors and escape from the room, with which you will plunge into a whirlpool of amazing adventures, uncover the secret of the Lost Estate of Lord Kelly, learn about treacherous betrayal and true love. Features of the game: ★ Discover the secret of Lord Kelly's estate; ★ Enjoy amazing graphics; ★ solve puzzles on unique, non-repetitive levels; ★ Find hidden objects; ★ Dozens of exciting tasks and incredible challenges.",
+    "rating": 8.8
   },
   {
     "id": "sticker-asmr-casual-6",
@@ -412,6 +431,15 @@
     "icon": "https://mirraaps.space/sticker-asmr/icon.png",
     "iframeIcon": "https://mirraaps.space/sticker-asmr/icon.png",
     "iframeCover": "https://mirraaps.space/sticker-asmr/icon.png",
-    "category": "casual"
+    "category": "casual",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Control on a mobile device - touch / swipe.",
+      "PC control - Left mouse button"
+    ],
+    "description": "Do you want to come up with your own design with a popular logo? Asmr Sticker: Sticker Design With this easy-to-use game you can color stickers to your taste, and then save and share them with friends. Choose from a variety of shapes and designs of stickers and unleash your imagination by adding colors and patterns to make them truly unique. With a simple and intuitive interface, Asmr Sticker: The Sticker design is perfect for children and adults. Main features: Color and customize your stickers to make them unique. -Simple interface for all ages. -Share your stickers with friends and family. -Endless possibilities for creativity. -Download Asmr Sticker: Sticker Design today and start creating your own unique stickers!",
+    "rating": 7.3
   }
 ]
