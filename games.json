@@ -98,7 +98,15 @@
     "url": "https://hosting.mirracloud.com/hosting/games/69498ee79b55a29212796119/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/cube-stories/icon.png",
-    "category": "new"
+    "category": "new",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "The goal of the game is to escape from the room. In order to get out of the room, you need to solve all the riddles and puzzles. In order to interact with an object, you need to click on it or move it."
+    ],
+    "description": "Immerse yourself in a fascinating plot and follow a brave video blogger who bravely goes into the dark embrace of an abandoned mansion. As you make your way through each carefully designed room, you'll encounter a series of cryptic puzzles and mind-bending challenges that will test your intelligence, observation, and creative thinking. As the plot develops, you will be plunged into the darkness of the house's past and the mysterious history of its former inhabitants. Uncover the secrets hidden behind the walls and unravel the truth behind the urban myth, all while facing the Riddler's devious traps on your path to freedom. Key Features: - Exciting plot. - Challenging puzzles. - Intuitive controls. - Hidden hints.",
+    "rating": 8.5
   },
   {
     "id": "find-pair3d-casual-2",
