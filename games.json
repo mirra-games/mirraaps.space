@@ -207,7 +207,7 @@
       "PC controls: Left and right mouse button.",
       "On your phone: Tap the left and right half of the screen."
     ],
-    "description": "Your goal is simple but challenging - climb higher, push the limits and reach the top.\nPC controls: Left and right mouse button.\nOn your phone: Tap the left and right half of the screen.",
+    "description": "Embark on an adrenaline-pumping climb in the ultimate test of skill and determination! Ragdoll Rock Climber is a thrilling third-person mobile experience that challenges you to conquer the heights.",
     "rating": 7.3
   },
   {
@@ -216,7 +216,16 @@
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
     "defaultParams": {},
     "icon": "https://mirraaps.space/soccer-dash/game-background.png",
-    "category": "featured"
+    "category": "featured",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Drag the left mouse button to aim and release to kick the ball."
+    ],
+    "description": "Soccer Dash is a casual soccer game where you play as the ball. Aim and control the soccer ball around obstacles and other players trying to obstruct you until the end. The game will go into a slow-motion state when you choose the direction of the kick, so take your time.",
+    "rating": 9.9
+    
   },
   {
     "id": "fortress-of-the-wizard-new-4",
