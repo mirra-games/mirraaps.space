@@ -114,7 +114,16 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a45c9b55a2921279611d/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/find-pair-3d/icon.png",
-    "category": "casual"
+    "category": "casual",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Drag objects onto the round platforms at the bottom of the screen.",
+      "To complete the level, you need to find all pairs of objects."
+    ],
+    "description": "Welcome to the game \"Find a Pair 3D\". In this game, the player is tasked with finding two identical items from a pile of objects and merging them. For every successfully merged pair, the player earns one star. As the player progresses through levels, new and increasingly diverse items appear, making the game more challenging. The goal is to merge as many pairs as possible to accumulate stars. Additionally, the game features a leaderboard where players can compare their scores and compete for the top position. The higher the level, the more difficult the item combinations become, adding excitement and complexity to the gameplay.",
+    "rating": 7.9
   },
   {
     "id": "dragon-hunter-2",
