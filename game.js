@@ -362,6 +362,10 @@ function setupFullscreen(frameWrapper) {
     }
   });
 
+  ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach((eventName) => {
+    document.addEventListener(eventName, syncButtonState);
+  });
+
   syncButtonState();
 }
 
@@ -549,7 +553,7 @@ async function initGamePage() {
   const originalParent = frameWrapper.parentElement;
   const originalNextSibling = frameWrapper.nextSibling;
   const hero = document.getElementById('game-mobile-hero');
-  const mqMobile = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+  const mqMobile = window.matchMedia ? window.matchMedia('(max-width: 1024px) and (pointer: coarse)') : null;
   const gameUrl = buildGameUrl(game);
   let hasStarted = false;
 
