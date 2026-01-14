@@ -10,14 +10,10 @@
     "developer": "Mirra Games",
     "technology": "HTML5 (Unity WebGL)",
     "controls": [
-      "WASD to move",
-      "Mouse to rotate camera",
-      "Left Shift to sprint",
-      "F to interact with objects",
-      "P to open the settings panel"
+      "Use the left mouse button or tap the screen to interact with the game UI."
     ],
-    "description": "Epic Empire is an action-packed adventure that challenges your skills in dynamic arenas.",
-    "rating": 4.5
+    "description": "Epic Empire: Tower Defense is a thrilling strategy game where you command powerful heroes and towers to protect your kingdom from waves of evil forces. Embark on an epic adventure through vibrant worlds, from frozen kingdom, soaring magical kingdoms, dark underground tunnels, and enchanted florists. Face unique challenges worldwide as you battle to reclaim territories overrun by enemies.",
+    "rating": 9.6
   },
   {
     "id": "construction-set-new-1",
