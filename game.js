@@ -217,7 +217,7 @@ function setupFullscreen(frameWrapper) {
   exitButton.className = EXIT_BUTTON_CLASS;
   exitButton.setAttribute('aria-label', 'Exit fullscreen');
   exitButton.hidden = true;
-  exitButton.innerHTML = '&times;';
+  exitButton.textContent = 'Exit';
   document.body.appendChild(exitButton);
 
   const isAppleMobile =
@@ -494,21 +494,10 @@ function fillMobileGameInfo(game) {
   }
 }
 
-function setupMobileActions(frameWrapper) {
+function setupMobileActions(onPlay) {
   const playBottom = document.getElementById('play-now-button-bottom');
-  const fsBottom = document.getElementById('play-fullscreen-button');
-  const fsButton = document.getElementById('fullscreen-button');
-  if (!frameWrapper) return;
-
-  function scrollToFrame() {
-    const rect = frameWrapper.getBoundingClientRect();
-    const y = rect.top + window.scrollY - 10;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-
-  if (playBottom) playBottom.addEventListener('click', scrollToFrame);
-  if (fsBottom && fsButton) {
-    fsBottom.addEventListener('click', () => fsButton.click());
+  if (playBottom && onPlay) {
+    playBottom.addEventListener('click', onPlay);
   }
 }
 
@@ -552,6 +541,7 @@ async function initGamePage() {
   const frameIcon = document.getElementById('game-frame-icon');
   const frameOverlayTitle = document.getElementById('game-frame-overlay-title');
   const framePlayButton = document.getElementById('game-frame-play');
+  const fullscreenButton = document.getElementById('fullscreen-button');
   if (!titleEl || !sidebarList || !frameEl || !frameWrapper) {
     return;
   }
@@ -563,7 +553,7 @@ async function initGamePage() {
   const gameUrl = buildGameUrl(game);
   let hasStarted = false;
 
-  function startGame() {
+  function startGame(options = {}) {
     if (hasStarted) return;
     frameEl.src = gameUrl;
     frameWrapper.classList.add('game-frame-wrapper--playing');
@@ -571,6 +561,10 @@ async function initGamePage() {
       frameOverlay.setAttribute('aria-hidden', 'true');
     }
     hasStarted = true;
+
+    if (options.enterFullscreen && fullscreenButton) {
+      fullscreenButton.click();
+    }
   }
 
   function isFullscreenLikeActive() {
@@ -607,9 +601,6 @@ async function initGamePage() {
 
   function handleViewportChange() {
     syncFramePlacement();
-    if (mqMobile && mqMobile.matches) {
-      startGame();
-    }
   }
 
   handleViewportChange();
@@ -743,11 +734,6 @@ async function initGamePage() {
     });
   }
 
-  const isDesktop = !(mqMobile && mqMobile.matches);
-  if (!isDesktop) {
-    startGame();
-  }
-
   saveContinueGame(game);
 
   setupFullscreen(frameWrapper);
@@ -756,7 +742,7 @@ async function initGamePage() {
   fillMobileGameInfo(game);
   setupMobileTabs();
   populateMobileMoreGames(games, game.id);
-  setupMobileActions(frameWrapper);
+  setupMobileActions(() => startGame({ enterFullscreen: true }));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
