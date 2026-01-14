@@ -79,7 +79,18 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6901fc02885407de45ae0c6f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/mad-guns/cover.png",
-    "category": "featured"
+    "category": "featured",
+     "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "WASD = move",
+      "R = reload",
+      "Left click = shoot",
+      "Tab = menu"
+    ],
+    "description": "Mad GunS - Battle Royale is a wacky royal battle where chaos rules and anything can be a weapon. Arm yourself with bananas, handbags, or even hamster guns as you take on zombies, giant turkeys, and wild octopuses in outrageous online modes. Explore unique maps, craft your own levels, and fight to save Mr. Cat in this explosive pixel showdown.",
+    "rating": 9.6
   },
   {
     "id": "cube-new-2",
