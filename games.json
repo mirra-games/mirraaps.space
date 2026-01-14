@@ -180,7 +180,17 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a6589b55a2921279611e/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/hidden-object-island/icon.png",
-    "category": "casual"
+    "category": "casual",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "The goal of the game is to find all the hidden objects in the locations",
+      "PC control - left-click on a hidden object",
+      "Control on a mobile device - tap on a hidden object"
+    ],
+    "description": "Discover the ultimate hidden objects game and embark on a journey through stunning locations, captivating puzzles, and mysterious adventures!Step into the world of hidden secrets and surprises, where every location tells a story. From serene beaches and tranquil Japanese gardens to magical flying houses and rustic fishing villages, this game takes you to breathtaking destinations. Uncover the secrets behind each scene as you search and find hidden objects, solve the puzzles and collect rare treasures!",
+    "rating": 8.5
   },
   {
     "id": "ragdoll-rock-climber-arcade-3",
