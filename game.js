@@ -558,7 +558,12 @@ async function initGamePage() {
   let hasStarted = false;
 
   function startGame(options = {}) {
-    if (hasStarted) return;
+    if (hasStarted) {
+      if (options.enterFullscreen && fullscreenButton) {
+        fullscreenButton.click();
+      }
+      return;
+    }
     frameEl.src = gameUrl;
     frameWrapper.classList.add('game-frame-wrapper--playing');
     if (frameOverlay) {
