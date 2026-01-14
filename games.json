@@ -59,7 +59,19 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b2ca9b55a29212796123/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/obby-world/icon.png",
-    "category": "arcade"
+    "category": "arcade",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "WASD / arrow keys = move",
+      "Space = jump",
+      "P = pause",
+      "J = avatar customize",
+      "Tab = show/hide cursor"
+    ],
+    "description": "Obby World: Squid Escape is a casual parkour game where you jump your way through a whirlwind of obstacles and surprising challenges. Anything is possible in the variety of games offered. You will find yourself leaping across deadly gaps, racing through winding tracks on a speedy bike, and making daring escapes from high-security prisons. Each mode offers new thrills, so get ready to test your reflexes",
+    "rating": 9.9
   },
   {
     "id": "Mad-featured-2",
