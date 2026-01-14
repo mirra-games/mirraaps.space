@@ -29,7 +29,6 @@
       "PC",
       "Left mouse button = choose a piece",
       "Right mouse button = zoom",
-      " ",
       "Mobile",
       "Tap = choose a piece",
       "Double tap and hold = zoom"
@@ -44,7 +43,15 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a0199b55a2921279611c/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/cube-2048/icon.png",
-    "category": "casual"
+    "category": "casual",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Use the left mouse button or tap the screen to interact with the game UI."
+    ],
+    "description": "Try your best to reach 2048! Move your numbered block by clicking and swiping in a direction. You can also move by clicking on the onscreen arrow buttons. When your block touches another block with the same number, the number on your block doubles.",
+    "rating": 8.2
   },
   {
     "id": "obby-world-arcade-1",
