@@ -5,6 +5,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/694987ae8407fddba4bf1d0f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/epic-empire/cover.png",
+    "iframeIcon": "https://mirraaps.space/epic-empire/icon.png",
+    "iframeCover": "https://mirraaps.space/epic-empire/cover.png",
     "category": "featured",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -21,6 +23,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/68b5749a7612784f88149b79/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/construction-set/512.png",
+    "iframeIcon": "https://mirraaps.space/construction-set/512.png",
+    "iframeCover": "https://mirraaps.space/construction-set/800%20470.png",
     "category": "new",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -43,6 +47,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a0199b55a2921279611c/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/cube-2048/icon.png",
+    "iframeIcon": "https://mirraaps.space/cube-2048/icon.png",
+    "iframeCover": "https://mirraaps.space/cube-2048/icon.png",
     "category": "casual",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -59,6 +65,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b2ca9b55a29212796123/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/obby-world/icon.png",
+    "iframeIcon": "https://mirraaps.space/obby-world/icon.png",
+    "iframeCover": "https://mirraaps.space/obby-world/icon.png",
     "category": "arcade",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -79,6 +87,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6901fc02885407de45ae0c6f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/mad-guns/cover.png",
+    "iframeIcon": "https://mirraaps.space/mad-guns/icon.png",
+    "iframeCover": "https://mirraaps.space/mad-guns/cover.png",
     "category": "featured",
      "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -98,6 +108,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/69498ee79b55a29212796119/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/cube-stories/icon.png",
+    "iframeIcon": "https://mirraaps.space/cube-stories/icon.png",
+    "iframeCover": "https://mirraaps.space/cube-stories/cover.png",
     "category": "new",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -114,6 +126,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a45c9b55a2921279611d/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/find-pair-3d/icon.png",
+    "iframeIcon": "https://mirraaps.space/find-pair-3d/icon.png",
+    "iframeCover": "https://mirraaps.space/find-pair-3d/icon.png",
     "category": "casual",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -131,6 +145,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b3db8407fddba4bf1d16/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/dragon-hunter/icon.png",
+    "iframeIcon": "https://mirraaps.space/dragon-hunter/icon.png",
+    "iframeCover": "https://mirraaps.space/dragon-hunter/icon.png",
     "category": "arcade",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -148,6 +164,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6905f111885407de45ae0c70/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/command-strike/cover.png",
+    "iframeIcon": "https://mirraaps.space/command-strike/icon.png",
+    "iframeCover": "https://mirraaps.space/command-strike/cover.png",
     "category": "featured",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -164,6 +182,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/694991489b55a2921279611a/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/find-sort-match/icon.png",
+    "iframeIcon": "https://mirraaps.space/find-sort-match/icon.png",
+    "iframeCover": "https://mirraaps.space/find-sort-match/cover.png",
     "category": "new",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -180,6 +200,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a6589b55a2921279611e/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/hidden-object-island/icon.png",
+    "iframeIcon": "https://mirraaps.space/hidden-object-island/icon.png",
+    "iframeCover": "https://mirraaps.space/hidden-object-island/icon.png",
     "category": "casual",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -198,6 +220,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b50a9b55a29212796124/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/ragdoll-rock-climber/icon.png",
+    "iframeIcon": "https://mirraaps.space/ragdoll-rock-climber/icon.png",
+    "iframeCover": "https://mirraaps.space/ragdoll-rock-climber/icon.png",
     "category": "arcade",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -216,6 +240,8 @@
     "url": "https://mirraaps.space/soccer-dash/index.html?region=en",
     "defaultParams": {},
     "icon": "https://mirraaps.space/soccer-dash/game-background.png",
+    "iframeIcon": "https://mirraaps.space/soccer-dash/game-icon.png",
+    "iframeCover": "https://mirraaps.space/soccer-dash/game-background.png",
     "category": "featured",
     "tags": ["desktop", "tablet", "mobile"],
     "developer": "Mirra Games",
@@ -233,7 +259,20 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949afb89b55a29212796122/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/fortress-of-the-wizard/icon.png",
-    "category": "new"
+    "iframeIcon": "https://mirraaps.space/fortress-of-the-wizard/icon.png",
+    "iframeCover": "https://mirraaps.space/fortress-of-the-wizard/cover.png",
+    "category": "new",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Left mouse button = use spells",
+      "QE / 1,2,3,4,5,6,7,8 / mouse wheel = select spells",
+      "Right mouse button / W = select fireball spell"
+    ],
+    "description": "Fortress of the Wizard is a magical defense adventure where you become a mighty sorcerer guarding your stronghold from relentless demon hordes. Harness an arsenal of devastating spells—fireballs, icy waves, swirling tornadoes, meteors, and more—to crush the invasion. Every battle tests your timing, strategy, and mastery of the arcane arts as you fight to protect your realm",
+    "rating": 9.9
+    
   },
   {
     "id": "tank-battles-2d-casual-4",
@@ -241,6 +280,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a8448407fddba4bf1d15/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/tank-battles-2d/icon.png",
+    "iframeIcon": "https://mirraaps.space/tank-battles-2d/icon.png",
+    "iframeCover": "https://mirraaps.space/tank-battles-2d/icon.png",
     "category": "casual"
   },
   {
@@ -249,6 +290,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b5eb9b55a29212796125/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/little-shop/icon.png",
+    "iframeIcon": "https://mirraaps.space/little-shop/icon.png",
+    "iframeCover": "https://mirraaps.space/little-shop/icon.png",
     "category": "arcade"
   },
   {
@@ -257,6 +300,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/694989709b55a29212796116/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/epic-racing/cover.png",
+    "iframeIcon": "https://mirraaps.space/epic-racing/icon.png",
+    "iframeCover": "https://mirraaps.space/epic-racing/cover.png",
     "category": "featured"
   },
   {
@@ -265,6 +310,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949993a9b55a2921279611b/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/runic-curse/icon.png",
+    "iframeIcon": "https://mirraaps.space/runic-curse/icon.png",
+    "iframeCover": "https://mirraaps.space/runic-curse/cover.png",
     "category": "new"
   },
   {
@@ -273,6 +320,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949a9939b55a2921279611f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/blackkriver-mystery/icon.png",
+    "iframeIcon": "https://mirraaps.space/blackkriver-mystery/icon.png",
+    "iframeCover": "https://mirraaps.space/blackkriver-mystery/icon.png",
     "category": "casual"
   },
   {
@@ -281,6 +330,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b7529b55a29212796126/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/bed-wars/icon.png",
+    "iframeIcon": "https://mirraaps.space/bed-wars/icon.png",
+    "iframeCover": "https://mirraaps.space/bed-wars/icon.png",
     "category": "arcade"
   },
   {
@@ -289,6 +340,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/69499be78407fddba4bf1d14/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/100-dors-escape/icon.png",
+    "iframeIcon": "https://mirraaps.space/100-dors-escape/icon.png",
+    "iframeCover": "https://mirraaps.space/100-dors-escape/cover.png",
     "category": "new"
   },
   {
@@ -297,6 +350,8 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949abc69b55a29212796120/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/sticker-asmr/icon.png",
+    "iframeIcon": "https://mirraaps.space/sticker-asmr/icon.png",
+    "iframeCover": "https://mirraaps.space/sticker-asmr/icon.png",
     "category": "casual"
   }
 ]

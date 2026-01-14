@@ -547,6 +547,11 @@ async function initGamePage() {
   const sidebarList = document.getElementById('sidebar-games');
   const frameEl = document.getElementById('game-frame');
   const frameWrapper = document.getElementById('game-frame-wrapper');
+  const frameOverlay = document.getElementById('game-frame-overlay');
+  const frameCover = document.getElementById('game-frame-cover');
+  const frameIcon = document.getElementById('game-frame-icon');
+  const frameOverlayTitle = document.getElementById('game-frame-overlay-title');
+  const framePlayButton = document.getElementById('game-frame-play');
   if (!titleEl || !sidebarList || !frameEl || !frameWrapper) {
     return;
   }
@@ -555,6 +560,18 @@ async function initGamePage() {
   const originalNextSibling = frameWrapper.nextSibling;
   const hero = document.getElementById('game-mobile-hero');
   const mqMobile = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+  const gameUrl = buildGameUrl(game);
+  let hasStarted = false;
+
+  function startGame() {
+    if (hasStarted) return;
+    frameEl.src = gameUrl;
+    frameWrapper.classList.add('game-frame-wrapper--playing');
+    if (frameOverlay) {
+      frameOverlay.setAttribute('aria-hidden', 'true');
+    }
+    hasStarted = true;
+  }
 
   function isFullscreenLikeActive() {
     return Boolean(
@@ -588,16 +605,23 @@ async function initGamePage() {
     }
   }
 
-  syncFramePlacement();
-  if (mqMobile) {
-    if (mqMobile.addEventListener) {
-      mqMobile.addEventListener('change', syncFramePlacement);
-    } else if (mqMobile.addListener) {
-      mqMobile.addListener(syncFramePlacement);
+  function handleViewportChange() {
+    syncFramePlacement();
+    if (mqMobile && mqMobile.matches) {
+      startGame();
     }
   }
-  window.addEventListener('resize', syncFramePlacement);
-  window.addEventListener('orientationchange', () => setTimeout(syncFramePlacement, 50));
+
+  handleViewportChange();
+  if (mqMobile) {
+    if (mqMobile.addEventListener) {
+      mqMobile.addEventListener('change', handleViewportChange);
+    } else if (mqMobile.addListener) {
+      mqMobile.addListener(handleViewportChange);
+    }
+  }
+  window.addEventListener('resize', handleViewportChange);
+  window.addEventListener('orientationchange', () => setTimeout(handleViewportChange, 50));
 
   titleEl.textContent = game.title || game.id || 'Game';
   if (categoryEl) {
@@ -694,8 +718,36 @@ async function initGamePage() {
     sidebarList.appendChild(item);
   });
 
-  const gameUrl = buildGameUrl(game);
-  frameEl.src = gameUrl;
+  if (frameOverlay) {
+    frameOverlay.setAttribute('aria-hidden', hasStarted ? 'true' : 'false');
+  }
+
+  if (frameIcon) {
+    const icon = game.iframeIcon || game.icon || '';
+    frameIcon.src = icon;
+    frameIcon.alt = game.title || game.id || 'Game icon';
+  }
+
+  if (frameCover) {
+    const cover = game.iframeCover || game.cover || game.banner || game.hero || game.icon || '';
+    frameCover.style.backgroundImage = cover ? `url("${cover}")` : 'none';
+  }
+
+  if (frameOverlayTitle) {
+    frameOverlayTitle.textContent = game.title || game.id || 'Game';
+  }
+
+  if (framePlayButton) {
+    framePlayButton.addEventListener('click', () => {
+      startGame();
+    });
+  }
+
+  const isDesktop = !(mqMobile && mqMobile.matches);
+  if (!isDesktop) {
+    startGame();
+  }
+
   saveContinueGame(game);
 
   setupFullscreen(frameWrapper);

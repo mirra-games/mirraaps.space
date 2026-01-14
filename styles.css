@@ -862,6 +862,96 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   border: 1px solid var(--color-border-subtle);
 }
 
+.game-frame-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.game-frame-wrapper--playing .game-frame-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.game-frame-cover {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.game-frame-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.72) 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.game-frame-overlay-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+.game-frame-overlay-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 22px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.game-frame-overlay-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.game-frame-play-button {
+  min-width: 140px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: linear-gradient(90deg, rgba(135, 110, 255, 0.95) 0%, rgba(118, 85, 255, 0.95) 40%, rgba(100, 70, 245, 0.95) 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(8, 12, 26, 0.4);
+  animation: play-button-pulse 2.4s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.game-frame-play-button:hover {
+  animation-play-state: paused;
+}
+
+@keyframes play-button-pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
 .game-frame-wrapper:fullscreen,
 .game-frame-wrapper:-webkit-full-screen,
 .game-frame-wrapper:-moz-full-screen {
@@ -1539,5 +1629,11 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   .game-layout {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+}
+
+@media (min-width: 769px) {
+  .game-frame-overlay {
+    display: flex;
   }
 }
