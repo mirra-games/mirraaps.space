@@ -936,7 +936,7 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 12px 24px rgba(8, 12, 26, 0.4);
-  animation: play-button-pulse 2.4s ease-in-out infinite;
+  animation: play-button-pulse 0.7s ease-in-out infinite;
   animation-direction: alternate;
 }
 
