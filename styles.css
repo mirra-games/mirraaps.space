@@ -860,6 +860,7 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   overflow: hidden;
   background: #000000;
   border: 1px solid var(--color-border-subtle);
+  aspect-ratio: 16 / 9;
 }
 
 .game-frame-overlay {
@@ -924,14 +925,14 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
 }
 
 .game-frame-play-button {
-  min-width: 140px;
-  height: 44px;
-  padding: 0 20px;
+  min-width: 160px;
+  height: 46px;
+  padding: 0 24px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: linear-gradient(90deg, rgba(135, 110, 255, 0.95) 0%, rgba(118, 85, 255, 0.95) 40%, rgba(100, 70, 245, 0.95) 100%);
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 12px 24px rgba(8, 12, 26, 0.4);
@@ -988,8 +989,10 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
 }
 
 .game-frame {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   border: none;
   display: block;
 }
