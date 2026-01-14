@@ -25,7 +25,22 @@
     "url": "https://hosting.mirracloud.com/hosting/games/68b5749a7612784f88149b79/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/construction-set/512.png",
-    "category": "new"
+    "category": "new",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "PC",
+      "Left mouse button = choose a piece",
+      "Right mouse button = zoom",
+      " ",
+      "Mobile",
+      "Tap = choose a piece",
+      "Double tap and hold = zoom"
+    ],
+    "description": "Construction Set - 3D Builder is a creative building puzzle game that lets you step into the role of a master builder. You’ll design and assemble intricate 3D structures, piece by piece, turning simple parts into impressive creations. Challenge your skills, unleash your imagination, and watch your architectural masterpieces come to life.",
+    "rating": 8.5
+    
   },
   {
     "id": "cube-2048-casual-1",
