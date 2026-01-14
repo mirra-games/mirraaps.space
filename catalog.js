@@ -44,6 +44,38 @@ function buildGameUrl(game) {
   return base.toString();
 }
 
+function toWebpUrl(url) {
+  if (!url) return '';
+  return url.replace(/\.png(\?.*)?$/i, '.webp$1');
+}
+
+function setPreviewImageAttrs(img) {
+  if (!img) return;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+}
+
+function buildPictureElement(src, alt, className) {
+  const img = document.createElement('img');
+  img.src = src || '';
+  img.alt = alt || '';
+  if (className) img.className = className;
+  setPreviewImageAttrs(img);
+
+  const webp = toWebpUrl(src);
+  if (webp && webp !== src) {
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    source.type = 'image/webp';
+    source.srcset = webp;
+    picture.appendChild(source);
+    picture.appendChild(img);
+    return { picture, img };
+  }
+
+  return { picture: img, img };
+}
+
 function createGameCard(game, variant) {
   const card = document.createElement('button');
   card.type = 'button';
@@ -52,11 +84,8 @@ function createGameCard(game, variant) {
   const thumb = document.createElement('div');
   thumb.className = 'game-thumb';
 
-  const img = document.createElement('img');
-  img.className = 'game-thumb-img';
-  img.src = game.icon || '';
-  img.alt = game.title || game.id || 'Game';
-  thumb.appendChild(img);
+  const { picture } = buildPictureElement(game.icon || '', game.title || game.id || 'Game', 'game-thumb-img');
+  thumb.appendChild(picture);
 
   const title = document.createElement('div');
   title.className = 'game-title';
@@ -255,10 +284,8 @@ function setupSearch(games) {
 
       const thumb = document.createElement('div');
       thumb.className = 'search-result-thumb';
-      const img = document.createElement('img');
-      img.src = game.icon || '';
-      img.alt = game.title || game.id || 'Game';
-      thumb.appendChild(img);
+      const { picture } = buildPictureElement(game.icon || '', game.title || game.id || 'Game');
+      thumb.appendChild(picture);
 
       const title = document.createElement('div');
       title.className = 'search-result-title';

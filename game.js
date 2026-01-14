@@ -36,6 +36,63 @@ function buildGameUrl(game) {
   return base.toString();
 }
 
+function toWebpUrl(url) {
+  if (!url) return '';
+  return url.replace(/\.png(\?.*)?$/i, '.webp$1');
+}
+
+function setPreviewImageAttrs(img) {
+  if (!img) return;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+}
+
+function buildPictureElement(src, alt, className) {
+  const img = document.createElement('img');
+  img.src = src || '';
+  img.alt = alt || '';
+  if (className) img.className = className;
+  setPreviewImageAttrs(img);
+
+  const webp = toWebpUrl(src);
+  if (webp && webp !== src) {
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    source.type = 'image/webp';
+    source.srcset = webp;
+    picture.appendChild(source);
+    picture.appendChild(img);
+    return { picture, img };
+  }
+
+  return { picture: img, img };
+}
+
+function replaceImageWithPicture(imgEl, src, alt) {
+  if (!imgEl) return null;
+  const { picture, img } = buildPictureElement(src, alt, imgEl.className);
+  if (imgEl.id) {
+    img.id = imgEl.id;
+  }
+  imgEl.replaceWith(picture);
+  return img;
+}
+
+function setCoverBackground(el, src) {
+  if (!el) return;
+  const png = src || '';
+  const webp = toWebpUrl(png);
+  if (!png) {
+    el.style.backgroundImage = 'none';
+    return;
+  }
+  el.style.backgroundImage = `url("${png}")`;
+  if (webp && webp !== png) {
+    el.style.backgroundImage = `-webkit-image-set(url("${webp}") type("image/webp"), url("${png}") type("image/png"))`;
+    el.style.backgroundImage = `image-set(url("${webp}") type("image/webp"), url("${png}") type("image/png"))`;
+  }
+}
+
 function setupThemeToggle() {
   const root = document.getElementById('app-root');
   const toggle = document.getElementById('theme-toggle');
@@ -73,10 +130,8 @@ function setupSearch(games) {
 
       const thumb = document.createElement('div');
       thumb.className = 'search-result-thumb';
-      const img = document.createElement('img');
-      img.src = game.icon || '';
-      img.alt = game.title || game.id || 'Game';
-      thumb.appendChild(img);
+      const { picture } = buildPictureElement(game.icon || '', game.title || game.id || 'Game');
+      thumb.appendChild(picture);
 
       const title = document.createElement('div');
       title.className = 'search-result-title';
@@ -182,10 +237,8 @@ function createSidebarItem(game, currentId) {
   const thumb = document.createElement('div');
   thumb.className = 'game-sidebar-thumb';
 
-  const img = document.createElement('img');
-  img.src = game.icon || '';
-  img.alt = game.title || game.id || 'Game';
-  thumb.appendChild(img);
+  const { picture } = buildPictureElement(game.icon || '', game.title || game.id || 'Game');
+  thumb.appendChild(picture);
   item.appendChild(thumb);
 
   const title = document.createElement('div');
@@ -405,10 +458,8 @@ function populateMobileMoreGames(games, currentId) {
 
     const thumb = document.createElement('div');
     thumb.className = 'game-mobile-more-thumb';
-    const img = document.createElement('img');
-    img.src = g.icon || '';
-    img.alt = g.title || g.id || 'Game';
-    thumb.appendChild(img);
+    const { picture } = buildPictureElement(g.icon || '', g.title || g.id || 'Game');
+    thumb.appendChild(picture);
 
     const name = document.createElement('div');
     name.className = 'game-mobile-more-name';
@@ -448,7 +499,9 @@ function fillMobileGameInfo(game) {
   const heroEl = document.getElementById('game-mobile-hero');
 
   if (titleEl) titleEl.textContent = game.title || game.id || 'Game';
-  if (iconEl) iconEl.src = game.icon || '';
+  if (iconEl) {
+    replaceImageWithPicture(iconEl, game.icon || '', game.title || game.id || 'Game');
+  }
 
   if (tagsEl) {
     tagsEl.innerHTML = '';
@@ -494,7 +547,11 @@ function fillMobileGameInfo(game) {
 
   if (heroEl) {
     const heroImage = game.banner || game.cover || game.hero || game.icon || '';
-    heroEl.style.setProperty('--game-mobile-hero-image', heroImage ? `url("${heroImage}")` : 'none');
+    const heroWebp = toWebpUrl(heroImage);
+    const pngValue = heroImage ? `url("${heroImage}")` : 'none';
+    const webpValue = heroWebp && heroWebp !== heroImage ? `url("${heroWebp}")` : pngValue;
+    heroEl.style.setProperty('--game-mobile-hero-image-png', pngValue);
+    heroEl.style.setProperty('--game-mobile-hero-image-webp', webpValue);
   }
 }
 
@@ -724,13 +781,12 @@ async function initGamePage() {
 
   if (frameIcon) {
     const icon = game.iframeIcon || game.icon || '';
-    frameIcon.src = icon;
-    frameIcon.alt = game.title || game.id || 'Game icon';
+    replaceImageWithPicture(frameIcon, icon, game.title || game.id || 'Game icon');
   }
 
   if (frameCover) {
     const cover = game.iframeCover || game.cover || game.banner || game.hero || game.icon || '';
-    frameCover.style.backgroundImage = cover ? `url("${cover}")` : 'none';
+    setCoverBackground(frameCover, cover);
   }
 
   if (frameOverlayTitle) {

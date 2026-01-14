@@ -407,6 +407,16 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   background: #d9d9d9;
 }
 
+.game-thumb picture,
+.search-result-thumb picture,
+.game-sidebar-thumb picture,
+.game-mobile-more-thumb picture,
+.game-mobile-icon picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .game-thumb-img {
   width: 100%;
   height: 100%;
@@ -1208,7 +1218,7 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: var(--game-mobile-hero-image, none);
+    background-image: var(--game-mobile-hero-image-png, none);
     background-size: cover;
     background-position: center;
     filter: blur(10px);
@@ -1216,6 +1226,24 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
     opacity: 0.6;
     pointer-events: none;
     z-index: 0;
+  }
+
+  @supports (background-image: image-set(url("x") type("image/webp"), url("x") type("image/png"))) {
+    .game-mobile-hero::before {
+      background-image: image-set(
+        var(--game-mobile-hero-image-webp) type("image/webp"),
+        var(--game-mobile-hero-image-png) type("image/png")
+      );
+    }
+  }
+
+  @supports (background-image: -webkit-image-set(url("x") type("image/webp"), url("x") type("image/png"))) {
+    .game-mobile-hero::before {
+      background-image: -webkit-image-set(
+        var(--game-mobile-hero-image-webp) type("image/webp"),
+        var(--game-mobile-hero-image-png) type("image/png")
+      );
+    }
   }
 
   .game-mobile-hero-overlay {
