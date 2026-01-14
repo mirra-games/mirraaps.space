@@ -367,13 +367,22 @@
   },
   {
     "id": "blackkriver-mystery-casual-5",
-    "title": "Blackkriver Mystery Casual",
+    "title": "Blackriver Mystery Casual",
     "url": "https://hosting.mirracloud.com/hosting/games/6949a9939b55a2921279611f/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/blackkriver-mystery/icon.png",
     "iframeIcon": "https://mirraaps.space/blackkriver-mystery/icon.png",
     "iframeCover": "https://mirraaps.space/blackkriver-mystery/icon.png",
-    "category": "casual"
+    "category": "casual",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "PC control: Left mouse button",
+      "Control on a mobile device: touch"
+    ],
+    "description": "Blackriver Mystery. Hidden Objects is a new game in which you have to try on the role of a mystical detective, the one who is destined to restore the town from the ruins and solve its mystery. Here you will find a lot of interesting quests, unique collections, popular mini-games (such as three-in-a-row, wheel of fortune and others). It's time to solve the riddle of Black River, detective! Main features of the game: - the need to rebuild the city from the ruins; - search for items in the most beautiful locations; - an intriguing plot; - monsters; - fascinating puzzles and mini-games; - ominous anomalies; - search for items like a real detective; Explore locations, find the most difficult items following an interesting plot. Play three-in-a-row and use boosters. The fate of the whole city is in your hands! Good luck, Detective.",
+    "rating": 8.8
   },
   {
     "id": "bed-wars-arcade-5",
