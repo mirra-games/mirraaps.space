@@ -131,7 +131,16 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6949b3db8407fddba4bf1d16/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/dragon-hunter/icon.png",
-    "category": "arcade"
+    "category": "arcade",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "The goal of the game is to visit all locations, passing them by killing monsters on your way. Control - touch/click."
+    ],
+    "description": "Choose your character, roll the dice and go on a fun adventure. Click on monsters - help the hero survive and defeat the legendary dragons in the clicker RPG Dragon Hunter. Luck and a strong phone glass will determine the fate of the dragon hunter. ★ FEATURES: ● Click to attack the enemy and help the hero ● Level up your character to unlock unique skills. ● Use battle magic to change the outcome of the battle ● Roll the dice to determine your character's fate ● Defeat your opponents to get gold and rare loot ● Find rare pets to increase your combat power ● Fight or avoid combat to achieve the main goal ● Collect trophies by defeating various monsters ● Play mini games to get better rewards ● Complete quests during your adventure ● Collect the treasure map from the pirate captain ● Clear the ruins of various monsters for a reward ● Defeat epic bosses in the tournament",
+    "rating": 9.1
+    
   },
   {
     "id": "command-featured-3",
