@@ -164,7 +164,15 @@
     "url": "https://hosting.mirracloud.com/hosting/games/694991489b55a2921279611a/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/find-sort-match/icon.png",
-    "category": "new"
+    "category": "new",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Use the left mouse button to interact with the in-game UI."
+    ],
+    "description": "Find Sort Match is an exciting and addictive puzzle game that challenges your observation and matching skills. In this game, you'll be presented with a variety of colorful objects scattered across the screen. Your task is to quickly find and sort matching items into their respective categories before time runs out. With each level, the difficulty increases, introducing new objects and more complex sorting challenges. Test your reflexes",
+    "rating": 7.2
   },
   {
     "id": "hidden-object-island-casual-3",
