@@ -148,7 +148,15 @@
     "url": "https://hosting.mirracloud.com/hosting/games/6905f111885407de45ae0c70/",
     "defaultParams": {},
     "icon": "https://mirraaps.space/command-strike/cover.png",
-    "category": "featured"
+    "category": "featured",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "The goal of the game is to visit all locations, passing them by killing monsters on your way. Control - touch/click."
+    ],
+    "description": "Welcome to a new shooter game! Take part in a real commando mission! Here you’ll find classic and favorite features of shooting games. About Command Strike FPS: - various maps for battles - offline games modes: Deathmatch, Flag capture, Missions - weaponry: powerful guns & pistols - simple shooting controls - action-packed gameplay Use your skills to become a super soldier - get a gun and join battles! It’s time to complete special commando missions!",
+    "rating": 9.2
   },
   {
     "id": "find-sort-match-new-3",
