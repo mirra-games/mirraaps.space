@@ -837,12 +837,12 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
 }
 
 .game-exit-fullscreen-button {
-  position: fixed;
-  top: calc(12px + env(safe-area-inset-top));
-  left: calc(12px + env(safe-area-inset-left));
-  height: 34px;
+  position: absolute;
+  top: calc(8px + env(safe-area-inset-top));
+  left: calc(8px + env(safe-area-inset-left));
+  height: 32px;
   padding: 0 14px;
-  border-radius: 999px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: linear-gradient(90deg, rgba(135, 110, 255, 0.95) 0%, rgba(118, 85, 255, 0.95) 40%, rgba(100, 70, 245, 0.95) 100%);
   color: #ffffff;
@@ -850,7 +850,7 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   z-index: 2147483647;
   font-size: 12px;
   font-weight: 700;
-  line-height: 34px;
+  line-height: 32px;
   text-align: center;
   box-shadow: 0 10px 18px rgba(8, 12, 26, 0.35);
 }
@@ -862,6 +862,7 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
   background: #000000;
   border: 1px solid var(--color-border-subtle);
   aspect-ratio: 16 / 9;
+  --game-toolbar-height: 0px;
 }
 
 .game-frame-overlay {
@@ -967,7 +968,6 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
 .game-frame-wrapper:-webkit-full-screen .game-frame,
 .game-frame-wrapper:-moz-full-screen .game-frame {
   width: 100%;
-  height: 100%;
   aspect-ratio: auto;
 }
 
@@ -985,15 +985,16 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
 
 .game-frame-wrapper--pseudo-fullscreen .game-frame {
   width: 100%;
-  height: 100%;
   aspect-ratio: auto;
 }
 
 .game-frame {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: var(--game-toolbar-height);
+  bottom: 0;
   width: 100%;
-  height: 100%;
   border: none;
   display: block;
 }
@@ -1170,8 +1171,13 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
 }
 
 @media (max-width: 1024px) and (pointer: coarse) {
-  body:not(.is-game-fullscreen):not(.is-game-pseudo-fullscreen)::before {
-    content: 'Rotate device';
+  .game-frame-wrapper {
+    aspect-ratio: auto;
+  }
+
+  body.is-game-fullscreen .game-frame-wrapper,
+  body.is-game-pseudo-fullscreen .game-frame-wrapper {
+    --game-toolbar-height: calc(44px + env(safe-area-inset-top));
   }
 
   .app-main--game {
@@ -1621,12 +1627,39 @@ body.is-game-pseudo-fullscreen .game-mobile-more {
     height: 70px;
   }
 
+  .game-frame-overlay-content {
+    max-width: 90%;
+    max-height: 90%;
+    width: min(320px, 90%);
+  }
+
   .game-frame-overlay-title {
     font-size: 18px;
   }
 
   .game-frame-play-button {
     display: none;
+  }
+}
+
+@media (max-width: 1024px) and (pointer: coarse) and (orientation: landscape) {
+  .game-mobile-hero {
+    height: min(52vh, calc(100vw * 0.5));
+  }
+
+  .game-frame-overlay-content {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .game-frame-overlay-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .game-frame-overlay-title {
+    font-size: 16px;
   }
 }
 

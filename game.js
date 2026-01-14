@@ -218,7 +218,7 @@ function setupFullscreen(frameWrapper) {
   exitButton.setAttribute('aria-label', 'Exit fullscreen');
   exitButton.hidden = true;
   exitButton.textContent = 'Exit';
-  document.body.appendChild(exitButton);
+  frameWrapper.appendChild(exitButton);
 
   const isAppleMobile =
     /iPad|iPhone|iPod/.test(navigator.userAgent) ||
