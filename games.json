@@ -271,7 +271,7 @@
       "Right mouse button / W = select fireball spell"
     ],
     "description": "Fortress of the Wizard is a magical defense adventure where you become a mighty sorcerer guarding your stronghold from relentless demon hordes. Harness an arsenal of devastating spells—fireballs, icy waves, swirling tornadoes, meteors, and more—to crush the invasion. Every battle tests your timing, strategy, and mastery of the arcane arts as you fight to protect your realm",
-    "rating": 9.9
+    "rating": 8.9
     
   },
   {
@@ -282,7 +282,17 @@
     "icon": "https://mirraaps.space/tank-battles-2d/icon.png",
     "iframeIcon": "https://mirraaps.space/tank-battles-2d/icon.png",
     "iframeCover": "https://mirraaps.space/tank-battles-2d/icon.png",
-    "category": "casual"
+    "category": "casual",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "The goal of the game is to destroy all opponents on each level. The opponents may be tanks, towers, bosses, and so on.",
+      "Controls on the desktop: AD/arrows for movement, LMB for shooting.",
+      "Control on a mobile device: touch/swipe."
+    ],
+    "description": "Play cartoon tanks! Welcome to the best World War II tank battle game! Get ready to experience the thrill of controlling your own tank in epic battles that will test your strategic skills and combat prowess. In this game, you will control a cartoon-style tank and engage in intense battles with enemy tanks on various World War II-themed battlefields. Use your wits and tactical prowess to outsmart your opponents, evade enemy fire, and fight your way to victory.",
+    "rating": 8.6
   },
   {
     "id": "little-shop-arcade-4",
@@ -292,7 +302,19 @@
     "icon": "https://mirraaps.space/little-shop/icon.png",
     "iframeIcon": "https://mirraaps.space/little-shop/icon.png",
     "iframeCover": "https://mirraaps.space/little-shop/icon.png",
-    "category": "arcade"
+    "category": "arcade",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "Full store management - from orders to product display",
+      "Development and improvement - expand and modernize your business",
+      "Social elements - visit friends and their stores",
+      "Strategic approach - analyze demand and increase profits",
+      "Customization - design the store to your taste"
+    ],
+    "description": "Welcome to the world of trade! In this exciting game, you will become the manager of your own store. Order goods, place them on the shelves and serve customers to earn money and grow your business. Improve the interior, expand the trading area and monitor demand to become the most successful entrepreneur!",
+    "rating": 8.7
   },
   {
     "id": "epic racing-featured-5",
@@ -302,7 +324,22 @@
     "icon": "https://mirraaps.space/epic-racing/cover.png",
     "iframeIcon": "https://mirraaps.space/epic-racing/icon.png",
     "iframeCover": "https://mirraaps.space/epic-racing/cover.png",
-    "category": "featured"
+    "category": "featured",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "W = move forward",
+      "S = move backward",
+      "A = steer left",
+      "D = steer right",
+      "P = pause",
+      "R = reset car position",
+      "Left-mouse click = interact with the game UI",
+      "For mobile devices, use the game interface"
+    ],
+    "description": "Epic Racing - Descent on Cars is a high-speed demolition showdown where racing isn’t just about speed—it’s about survival. Crash, clash, and careen down wild tracks packed with brutal obstacles. Choose your car, master the chaos, and brace for bone-rattling impacts as you race to victory in a metal-twisting frenzy.",
+    "rating": 9.1
   },
   {
     "id": "runic-curse-new-5",
@@ -312,7 +349,21 @@
     "icon": "https://mirraaps.space/runic-curse/icon.png",
     "iframeIcon": "https://mirraaps.space/runic-curse/icon.png",
     "iframeCover": "https://mirraaps.space/runic-curse/cover.png",
-    "category": "new"
+    "category": "new",
+    "tags": ["desktop", "tablet", "mobile"],
+    "developer": "Mirra Games",
+    "technology": "HTML5 (Unity WebGL)",
+    "controls": [
+      "WASD / arrow keys = move",
+      "Space = jump",
+      "Left mouse button = fight and select",
+      "Shift = roll",
+      "1, 2, 3 = abilities",
+      "Tab = menu",
+      "M = map"
+    ],
+    "description": "Runic Curse is an action-adventure game where you step into the boots of Adrian, a shipwreck survivor stranded on a mysterious island. As you explore ancient ruins and cursed lands, uncover the secrets behind the Rune Curse and search for your lost crew. Face danger, solve mysteries, and embrace your fate in a world shrouded in shadows.",
+    "rating": 8.9
   },
   {
     "id": "blackkriver-mystery-casual-5",
